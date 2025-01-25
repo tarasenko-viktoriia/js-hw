@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 0</h1>
+   <p>
+      Обчислити значення виразів
+   </p>
+   <script>
+      const a = parseFloat(prompt("Введіть значення a"))
+      const b = parseFloat(prompt("Введіть значення b"))
+      const c = parseFloat(prompt("Введіть значення c"))
+
+      const expression1 = a + 12 + b
+      const expression2 = (Math.sqrt((a+b)/(2*a))).toFixed(3)
+      const expression3 = (Math.cbrt((a+b)*c)).toFixed(3)
+      const expression4 = (Math.sin(a/(-b))).toFixed(3)
+      document.write(`
+      Значення a = ${a}; <br>
+      Значення b = ${b}; <br>
+      Значення c = ${c}; <br>
+      Вираз №1: ${expression1} <br>
+      Вираз №2: ${expression2} <br>
+      Вираз №3: ${expression3} <br>
+      Вираз №4: ${expression4} <br>
+      `)
+   </script>
+</body>
+</html>

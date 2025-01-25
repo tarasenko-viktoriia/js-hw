@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 4</h1>
+   <p>
+      Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
+   </p>
+   <script>
+      const lengthInCm = parseFloat(prompt("Введіть довжину в сантиметрах!"))
+      const lengthInM = lengthInCm * 0.01
+      const lengthInKm = lengthInCm * 1e-5
+
+      document.write(`
+      В ${lengthInCm} см ${lengthInM} м або ${lengthInKm}км`)
+</script>
+</body>
+</html>

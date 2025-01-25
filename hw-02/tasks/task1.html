@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      table {
+         border-collapse: collapse;
+      }
+      th, td {
+         border: 1px solid black;
+         padding: 8px;
+         text-align: center;
+      }
+      th {
+         background-color: #f2f2f2;
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 1</h1>
+   <p>
+      Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
+   </p>
+   <script>
+      const numberOne = parseFloat(prompt("Введіть перше число."))
+      const numberTwo = parseFloat(prompt("Введіть друге число."))
+
+      const sum = numberOne + numberTwo
+      const product = numberOne * numberTwo
+      const quotient = (numberOne / numberTwo).toFixed(2)
+
+      document.write(`
+      <table>
+         <tr>
+            <th>Операція</th>
+            <th>Результат</th>
+         </tr>
+         <tr>
+            <td>Сума ${numberOne} і ${numberTwo}</td>
+            <td>${sum}</td>
+         </tr>
+         <tr>
+            <td>Добуток ${numberOne} і ${numberTwo}</td>
+            <td>${product}</td>
+         </tr>
+         <tr>
+            <td>Частка ${numberOne} і ${numberTwo}</td>
+            <td>${quotient}</td>
+         </tr>
+      </table>
+      `);
+   </script>
+</body>
+</html>
