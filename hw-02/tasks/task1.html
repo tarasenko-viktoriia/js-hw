@@ -24,13 +24,16 @@
       Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
    </p>
    <script>
+      // Отримання даних від користувача
       const numberOne = parseFloat(prompt("Введіть перше число."))
       const numberTwo = parseFloat(prompt("Введіть друге число."))
 
+      // Розрахунки
       const sum = numberOne + numberTwo
       const product = numberOne * numberTwo
       const quotient = (numberOne / numberTwo).toFixed(2)
 
+      // Виведення результату
       document.write(`
       <table>
          <tr>

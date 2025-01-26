@@ -8,17 +8,24 @@
 <body>
    <h1>Задача 0</h1>
    <p>
-      Обчислити значення виразів
+      Обчислити значення виразів:
    </p>
+   <div>
+      <img src="../img/image.png" alt="Приклади виразів">
+   </div>
    <script>
+      // Отримання даних від користувача
       const a = parseFloat(prompt("Введіть значення a"))
       const b = parseFloat(prompt("Введіть значення b"))
       const c = parseFloat(prompt("Введіть значення c"))
 
+      // Розрахунки
       const expression1 = a + 12 + b
       const expression2 = (Math.sqrt((a+b)/(2*a))).toFixed(3)
       const expression3 = (Math.cbrt((a+b)*c)).toFixed(3)
       const expression4 = (Math.sin(a/(-b))).toFixed(3)
+
+      // Виведення результату
       document.write(`
       Значення a = ${a}; <br>
       Значення b = ${b}; <br>

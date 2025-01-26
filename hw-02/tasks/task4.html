@@ -11,10 +11,14 @@
       Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
    </p>
    <script>
+      // Отримання довжини у см від користувача
       const lengthInCm = parseFloat(prompt("Введіть довжину в сантиметрах!"))
+
+      // Розрахунки
       const lengthInM = lengthInCm * 0.01
       const lengthInKm = lengthInCm * 1e-5
 
+      // Виведення результату
       document.write(`
       В ${lengthInCm} см ${lengthInM} м або ${lengthInKm}км`)
 </script>

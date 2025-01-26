@@ -11,11 +11,14 @@
       Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років.
    </p>
    <script>
+      // Отримання даних від користувача
       const birthYear = parseInt(prompt("Введіть свій рік народження."))
       const currentYear = parseInt(prompt("Введіть поточний рік."))
 
+      // Розрахунки
       const age = currentYear - birthYear
 
+      // Виведення результату
       document.write(`
       Вам ${age} років
       `)

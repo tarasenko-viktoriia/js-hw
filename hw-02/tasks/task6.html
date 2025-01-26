@@ -4,6 +4,25 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <style>
+      .receipt {
+         border: 1px solid #000;
+         padding: 20px;
+         max-width: 300px;
+      }
+      .receipt h2 {
+         text-align: center;
+         margin-bottom: 20px;
+      }
+      .receipt p {
+         margin: 5px 0;
+      }
+      .total {
+         font-weight: bold;
+         margin-top: 20px;
+         text-align: right;
+      }
+   </style>
 </head>
 <body>
    <h1>Задача 6</h1>
@@ -11,6 +30,7 @@
       З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
    </p>
    <script>
+      // Отримання даних для товарів
       const productPrice1 = parseFloat(prompt("Введіть вартість товару №1"))
       const productQuantity1 = parseInt(prompt("Введіть кількість одиниць товару №1"))
 
@@ -20,22 +40,22 @@
       const productPrice3 = parseFloat(prompt("Введіть вартість товару №3"))
       const productQuantity3 = parseInt(prompt("Введіть кількість одиниць товару №3"))
 
+      // Розрахунки
       const productValue1 = productPrice1 * productQuantity1
       const productValue2 = productPrice2 * productQuantity2
       const productValue3 = productPrice3 * productQuantity3
 
       const totalSum = productValue1 + productValue2 + productValue3
 
+      // Виведення результату
       document.write (`
-      Фіскальний чек <br>
-      Товар №1 <br>
-      ${productQuantity1} * ${productPrice1}  = ${productValue1} <br>
-      Товар №2 <br>
-      ${productQuantity2} * ${productPrice2}  = ${productValue2} <br>
-      Товар №3 <br>
-      ${productQuantity3} * ${productPrice3}  = ${productValue3} <br>
-
-      CУМА ${totalSum}
+      <div class="receipt ">
+         <h2>Фіскальний чек</h2>
+         <p>Товар №1: <br> ${productQuantity1} × ${productPrice1.toFixed(2)} грн = ${productValue1} грн</p>
+         <p>Товар №2: <br> ${productQuantity2} × ${productPrice2.toFixed(2)} грн = ${productValue2} грн</p>
+         <p>Товар №3: <br> ${productQuantity3} × ${productPrice3.toFixed(2)} грн = ${productValue3} грн</p>
+         <div class="total">Загальна сума: ${totalSum} грн</div>
+      </div>
       `)
    </script>
 </body>

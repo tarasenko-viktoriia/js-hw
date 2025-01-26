@@ -11,14 +11,18 @@
       Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості).
    </p>
    <script>
+      // Отримання даних від користувача
       const price = parseFloat(prompt("Введіть вартість одиниці товару!"))
       const quantity = parseFloat(prompt("Введіть кількість товару!"))
 
-      const totalCost = (price * quantity).toFixed(2)
+      //Константа з умови 
       const VAT = 5
 
+      // Розрахунки
+      const totalCost = (price * quantity).toFixed(2)
       const vatValue = (totalCost * VAT / 100).toFixed(2)
 
+      // Виведення результату
       document.write(`
       Вартість одиниці товару: ${price};<br>
       Кількість товару: ${quantity};<br>
