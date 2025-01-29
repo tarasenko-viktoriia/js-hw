@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 2</h1>
+   <p>
+      З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за 4 грн.
+   </p>
+   <script>
+      // Отримання даних від користувача
+      const price = parseFloat(prompt("Ведіть ціну товару"))
+      const money = parseFloat(prompt("Введіть кількість ваших грошей"))
+
+      // Розрахунки
+      if (money < price) {
+         result = "Не вистачає грошей. У покупці відмовлено.";
+      } else if (money - price >= 4) {
+         result = "Ви можете купити товар. Бажаєте придбати лотерею за 4 грн?";
+      } else {
+         result = "Ви можете купити товар, але на лотерею грошей не вистачить.";
+      }
+
+      document.write(`
+         ${result}
+      `)
+   </script>
+</body>
+</html>
