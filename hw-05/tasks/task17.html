@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 1</h1>
+   <p>
+      Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів користувач намагається потопити корабель. 
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const N = 10
+         const M = 10
+         const K = 3
+
+         const copmRowNum = 1 + Math.floor(Math.random() * N)
+         const copmColNum = 1 + Math.floor(Math.random() * M)
+
+         let destroyed = false
+         for (let step = 1; step <= K; step++) {
+            const userRowNum = parseInt(prompt("Введіть номер рядка пострілу"))
+            const userColNum = parseInt(prompt("Введіть номер стовпця пострілу"))
+
+            if (userRowNum == copmRowNum && userColNum === copmColNum) {
+               destroyed = true
+               break
+            }
+         }
+         if (destroyed) 
+            alert("Ви перемогли")
+         else 
+            alert("Ви програли")
+      }
+   </script>
+</body>
+</html>

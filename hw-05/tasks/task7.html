@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      table,th,td{
+         border: 1px solid grey;
+         text-align:center;
+         } 
+
+      th,td{
+            padding:10px;
+         }
+   </style>
+</head>
+<body>
+   <h1>Задача 7</h1>
+   <p>
+      Вивести таблицю з одним рядком і  7 стовпцями.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         document.write(`
+               <table>
+                  <tr>`)
+         for (let i = 1; i <= 7; i++) {
+            document.write(`
+               <td>${i}</td>
+            `)
+         }
+         document.write(`</tr> 
+               </table>
+         `)
+      }
+   </script>
+</body>
+</html>

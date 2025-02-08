@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 20</h1>
+   <p>
+      Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів. Знайти загальну величину прибутку та вивести величину прибутку протягом кожного окремого тижня.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let totalProfit = 0
+         let N = 2
+
+         for (let i = 1; i <= N; i++) {
+            let weeklyProfit = 0
+
+            for (let j = 0; j < 7; j++) {
+               const profit = parseFloat(prompt('Введіть прибуток за день'))
+               weeklyProfit += profit
+               totalProfit +=profit
+            }
+            document.write(`
+               <h3>Прибуток за ${i} тиждень : ${weeklyProfit}</h3>
+            `)
+         }
+
+         document.write(`
+            <h1>Загальний прибуток: ${totalProfit}</h1>
+         `)
+      }
+   </script>
+</body>
+</html>

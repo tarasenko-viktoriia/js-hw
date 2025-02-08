@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 11</h1>
+   <p>
+      Вивести на екран N абзаців (N вводиться користувачем) за зразком:
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const numParagraphs = parseInt(prompt("Введіть кількість абзаців"))
+
+         for (let i = 1; i <= numParagraphs; i++) {
+            document.write(`
+               <h1> Заголовок ${i}</h1>
+            `)
+            let num = 1
+            for (let j = 1; j <= numParagraphs; j++) {
+               if (j> i)
+                  continue
+               document.write(`
+                  <p> Розділ ${i}, параграф ${num++}</p>
+               `)
+            }
+            document.write(`
+               <hr>
+            `)
+         }
+      }
+   </script>
+</body>
+</html>

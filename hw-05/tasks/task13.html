@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 13</h1>
+   <p>
+      Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let randomNum 
+
+         do {
+            randomNum = 1 + Math.floor(Math.random() * 10)
+         } while (!confirm(`Ви загадали число ${randomNum}?`))
+         
+         document.write(`
+            Ви загадали число ${randomNum}
+         `)
+      }
+   </script>
+</body>
+</html>

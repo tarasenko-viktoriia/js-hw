@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 14</h1>
+   <p>
+      Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами. 
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const startInt = parseInt(prompt("Введіть число, що задасть початок інтервалу"))
+         const endInt = parseInt(prompt("Введіть число, що задасть кінець інтервалу"))
+
+         let sum = 0, oddNum = 0
+         for (let num = startInt + (1 - (startInt % 2)), oddNum = 0; num <= endInt; num += 2) {
+            sum += num
+            oddNum++
+         }
+         document.write(`Sum = ${sum}`)
+      }
+   </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      table,th,td{
+         border: 1px solid grey;
+         text-align:center;
+         } 
+
+      th,td{
+            padding:10px;
+         }
+      .table-block {
+         display: flex;
+         gap: 3.125rem;
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 10</h1>
+   <p>
+      Вивести 3 таблиці (по 3 рядки і 3 стовпці у кожній) за зразком
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         document.write(`
+            <div class="table-block">`)
+         let num = 1; 
+         for (let tabl = 0; tabl < 3; tabl++) {
+            document.write(`
+               <table>`)
+            for (let rowNum = 0; rowNum < 3; rowNum++) { 
+               document.write(`<tr>`);
+               for (let colNum = 0; colNum < 3; colNum++) { 
+                  document.write(`<td>${num}</td>`);
+                  num++; 
+               }
+               document.write(`</tr>`);
+            }
+            document.write(`
+               </table>
+            `)
+         }
+         document.write(`
+            </div>`)
+      }
+   </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 19</h1>
+   <p>
+      Користувача поступово вводить показники температури протягом року. Знайти середню температуру.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let sumTemperature = 0
+         const period = 5 // 5 обрала просто для зручності
+         for (let i = 0; i < period; i++) { 
+            const temperature = parseInt (prompt("Ведіть показники температури"))
+            sumTemperature += temperature 
+         }
+
+         const avg = (sumTemperature / period).toFixed(1)
+         document.write(`Середня температура: ${avg}`)
+      }
+   </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      img{
+         width: 12.5rem;
+         height: 12.5rem;
+         object-fit: cover;
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 16</h1>
+   <p>
+      Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за номером).
+   </p>
+   
+   <script>
+      if (confirm('Почати тестування?')) {
+         let sum = 0
+         for (let i = 1; i <= 3; i++) {
+         const randImageIndex = 1 + Math.floor(Math.random() * 4)
+         document.write(
+            `<img src="../img/img${randImageIndex}.png" style="position: absolute; left: ${
+               i * 15
+            }%; top: 30%" />`
+         )
+
+         sum += Math.pow(10, randImageIndex)
+         }
+         let score
+         switch (sum) {
+         case 30:
+            score = 100
+            break
+         case 300:
+            score = 200
+            break
+         case 3000:
+            score = 500
+            break
+         case 30000:
+            score = 1000
+            break
+         default:
+            score = 0
+            break
+         }
+         alert(`Виграш ${score}`)
+      }
+   </script>
+</body>
+</html>

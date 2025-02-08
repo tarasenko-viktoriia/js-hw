@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      table,th,td{
+         border: 1px solid grey;
+         text-align:center;
+         } 
+
+      th,td{
+            padding:10px;
+         }
+   </style>
+</head>
+<body>
+   <h1>Задача 8</h1>
+   <p>
+      Вивести таблицю з 3 рядків і 7 стовпців
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         document.write(`
+               <table>`)
+         for (let rowNum = 0; rowNum < 3; rowNum++) {
+            document.write(`
+               <tr>`)
+            for (let colNum = 1; colNum <= 7; colNum++) {
+               document.write(`
+                  <td>${colNum}</td>
+               `)
+            }
+            document.write(`
+               </tr>`)
+         }
+         document.write(`
+            </table>
+         `)
+      }
+   </script>
+</body>
+</html>

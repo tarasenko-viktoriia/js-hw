@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 1</h1>
+   <p>
+      Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.   
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const startInt = parseInt(prompt("Введіть початок інтервалу."))
+         const endtInt = parseInt(prompt("Введіть кінець інтервалу."))
+
+         let sum = 0
+         let oddNum = 0
+
+         do {
+            const randomNum = startInt + Math.floor(Math.random() * endtInt - startInt + 1)
+            console.log(randomNum)
+            if (randomNum % 2 > 0) {
+               oddNum++
+               sum += randomNum
+            }
+
+         } while (oddNum < 5)
+
+         document.write(`
+            Сума 5 непарних чисел, що знаходиться в інтервалі між ${startInt} та ${endtInt} дорівнює ${sum}
+         `)
+      }
+   </script>
+</body>
+</html>
