@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 5</h1>
+   <p>
+      Побудувати ялинку<br>
+      о<br>
+      оо<br>
+      ооо<br>
+      оооо<br>
+      ооооo<br>
+      о<br>
+      оо<br>
+      ооо<br>
+      оооо<br>
+      ооооo<br>
+      о<br>
+      оо<br>
+      ооо<br>
+      оооо<br>
+      ооооo<br>
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         for (let i = 0; i < 3; i++) {
+            let letter = "o"
+            for (let j = 1; j <= 5; j++) {
+               document.write(letter + "<br>"); 
+               letter += "o"; 
+            }
+         } 
+      }
+   </script>
+</body>
+</html>

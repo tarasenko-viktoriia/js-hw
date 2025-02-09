@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 3</h1>
+   <p>
+      Відобразити трикутник за допомогою символів «о»<br>
+      о<br>
+      оо<br>
+      ооо<br>
+      оооо<br>
+      ооооо<br>
+      оооооо<br>
+      ооооооо<br>
+
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let letter = "o"
+         for (let i = 1; i <= 7; i++) {
+            document.write(letter + "<br>"); 
+            letter += "o"; 
+         }
+      }
+      // if (confirm('Почати тестування?')) {
+      //    let rows = 5; 
+
+      //    for (let i = 1; i <= rows; i++) {
+      //       let spaces = ''; 
+      //       let symbols = ''; 
+            
+      //       for (let j = 1; j <= rows - i; j++) {
+      //          spaces += ' ';
+      //       }
+
+      //       for (let k = 1; k <= (2 * i - 1); k++) {
+      //          symbols += 'o';
+      //       }
+
+      //       console.log(spaces + symbols);
+      //    }
+      // }
+   </script>
+</body>
+</html>

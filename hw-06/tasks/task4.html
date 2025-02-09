@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 4</h1>
+   <p>
+      Відобразити трикутник за допомогою символів «о»<br>
+      оооооооооооо<br>
+      ооооооооооо<br>
+      оооооооооо<br>
+      ооооооооо<br>
+      оооооооо<br>
+      …<br>
+      оо<br>
+      о<br>
+
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const numRow = parseInt(prompt("Введіть кількість рядків"))
+         for (let i = numRow; i >= 1; i -= 1) {
+            let row = '';
+            for (let j = 0; j < i; j++) {
+               row += 'о';
+            }
+            document.write(`${row}<br>`);
+         }
+      }
+   </script>
+</body>
+</html>

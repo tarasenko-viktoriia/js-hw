@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 1</h1>
+   <p>
+      Вивести на екран<br>
+      A B C D E<br>
+      B C D E F<br> 
+      C D E F G<br> 
+      D E F G H<br> 
+      E F G H I<br>
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         document.write(`<table>`);
+         
+         for (let rowNum = 0; rowNum < 5; rowNum++) {
+            document.write(`<tr>`);
+            let startChar = "A".charCodeAt(0) + rowNum; 
+            
+            for (let colNum = 0; colNum < 5; colNum++) {
+               document.write(`<td> ${String.fromCharCode(startChar + colNum)} </td>`);
+            }
+            
+            document.write(`</tr>`);
+         }
+         
+         document.write(`</table>`);
+      }
+   </script>
+</body>
+</html>

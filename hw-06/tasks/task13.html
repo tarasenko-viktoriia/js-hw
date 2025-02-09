@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 13</h1>
+   <p>
+      Написати програму виведення на екран кожного символу латинського алфавіту та поруч з кожним з них символу, що передує йому та що слідує за ним.
+   </p>
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let startChar = "A".charCodeAt(0);
+         let endChar = "Z".charCodeAt(0);
+
+         for (let i = startChar; i <= endChar; i++) {
+            let current = String.fromCharCode(i);
+            let prev = i > startChar ? String.fromCharCode(i - 1) : "-"; 
+            let next = i < endChar ? String.fromCharCode(i + 1) : "-"; 
+
+            document.write(`${current} - передує символ ${prev}, а слідує ${next}<br>`);
+         }
+      }
+   </script>
+</body>
+</html>

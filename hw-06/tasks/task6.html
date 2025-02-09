@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 6</h1>
+   <p>
+      Інвестор вклав  S тис. грн на 20 років під 20% річних. Визначити за допомогою циклів суму, яку він одержить (без оподаткування).
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const deposit = parseFloat(prompt("Введіть початкову суму вкладу"))
+         const interest = 20
+         let sumDeposit = deposit
+
+         for (let i = 0; i < 20; i++) {
+            sumDeposit += ((sumDeposit)*interest)/100
+
+         }
+
+         document.write(`
+            Інвестор вклав  ${deposit} тис. грн. Через 20 років він отримає: ${sumDeposit.toFixed(2)} тис. грн. 
+         `)
+      }
+   </script>
+</body>
+</html>
