@@ -13,13 +13,13 @@
    <script>
       if (confirm('Почати тестування?')) {
          const startInt = parseInt(prompt("Введіть початок інтервалу."))
-         const endtInt = parseInt(prompt("Введіть кінець інтервалу."))
+         const endInt = parseInt(prompt("Введіть кінець інтервалу."))
 
          let sum = 0
          let oddNum = 0
 
          do {
-            const randomNum = startInt + Math.floor(Math.random() * endtInt - startInt + 1)
+            const randomNum = startInt + Math.floor(Math.random() * endInt - startInt + 1)
             console.log(randomNum)
             if (randomNum % 2 > 0) {
                oddNum++
@@ -29,7 +29,7 @@
          } while (oddNum < 5)
 
          document.write(`
-            Сума 5 непарних чисел, що знаходиться в інтервалі між ${startInt} та ${endtInt} дорівнює ${sum}
+            Сума 5 непарних чисел, що знаходиться в інтервалі між ${startInt} та ${endInt} дорівнює ${sum}
          `)
       }
    </script>

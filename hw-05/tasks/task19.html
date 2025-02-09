@@ -4,6 +4,11 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
 </head>
 <body>
    <h1>Задача 19</h1>
@@ -13,14 +18,14 @@
    <script>
       if (confirm('Почати тестування?')) {
          let sumTemperature = 0
-         const period = 5 // 5 обрала просто для зручності
+         const period = parseInt(prompt("Скільки днів враховувати?"))
          for (let i = 0; i < period; i++) { 
             const temperature = parseInt (prompt("Ведіть показники температури"))
             sumTemperature += temperature 
          }
 
          const avg = (sumTemperature / period).toFixed(1)
-         document.write(`Середня температура: ${avg}`)
+         document.write(`Середня температура: ${avg}°C`)
       }
    </script>
 </body>

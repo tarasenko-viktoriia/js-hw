@@ -4,6 +4,11 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
 </head>
 <body>
    <h1>Задача 1</h1>
@@ -25,15 +30,15 @@
 
          if (evenNumbers > oddNumbers){
             document.write(`
-               Парних чисел: ${evenNumbers}, непарних чисел ${oddNumbers}. Тому більше парних чисел.
+               <h3> Парних чисел: ${evenNumbers}, непарних чисел ${oddNumbers}. Тому більше парних чисел.</h3>
          `)
          } else if (evenNumbers < oddNumbers){
             document.write(`
-               Парних чисел: ${evenNumbers}, непарних чисел ${oddNumbers}. Тому більше непарних чисел.
+               <h3> Парних чисел: ${evenNumbers}, непарних чисел ${oddNumbers}. Тому більше непарних чисел.</h3>
          `)
          } else {
             document.write(`
-               Парних чисел: ${evenNumbers}, непарних чисел ${oddNumbers}. Тому кількість рівна.
+               <h3> Парних чисел: ${evenNumbers}, непарних чисел ${oddNumbers}. Тому кількість рівна.</h3>
          `)
          }
       }

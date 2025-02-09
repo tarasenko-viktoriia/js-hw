@@ -4,6 +4,11 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
 </head>
 <body>
    <h1>Задача 20</h1>
@@ -13,23 +18,23 @@
    <script>
       if (confirm('Почати тестування?')) {
          let totalProfit = 0
-         let N = 2
+         let N = parseInt(prompt("Скільки тижнів враховувати?"))
 
          for (let i = 1; i <= N; i++) {
             let weeklyProfit = 0
 
-            for (let j = 0; j < 7; j++) {
-               const profit = parseFloat(prompt('Введіть прибуток за день'))
+            for (let j = 1; j <= 7; j++) {
+               const profit = parseFloat(prompt(`Введіть прибуток за день ${j} тижня ${i}`))
                weeklyProfit += profit
                totalProfit +=profit
             }
             document.write(`
-               <h3>Прибуток за ${i} тиждень : ${weeklyProfit}</h3>
+               <h3>Прибуток за ${i} тиждень : ${weeklyProfit.toFixed(2)} грн.</h3>
             `)
          }
 
          document.write(`
-            <h1>Загальний прибуток: ${totalProfit}</h1>
+            <h1>Загальний прибуток: ${totalProfit.toFixed(2)} грн</h1>
          `)
       }
    </script>
