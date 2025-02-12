@@ -8,11 +8,26 @@
 <body>
    <h1>Задача 7</h1>
    <p>
-      Вивести таблицю з одним рядком і  7 стовпцями.
+      Інвестор вклав  тис. грн на 20 років під 20% річних, податок складає 5% від суми прибутку. Визначити за допомогою циклів суму, яку він одержить.
    </p>
    <script>
       if (confirm('Почати тестування?')) {
-         
+         const deposit = parseFloat(prompt("Введіть початкову суму вкладу"))
+         const interest = 20
+         let sumDeposit = deposit
+
+         for (let i = 0; i < 20; i++) {
+            const profit = sumDeposit * interest / 100;
+
+            const tax = profit * 0.05;
+
+            sumDeposit += profit - tax;
+
+         }
+
+         document.write(`
+            Інвестор вклав  ${deposit} тис. грн. Через 20 років він отримає: ${sumDeposit.toFixed(2)} тис. грн. 
+         `)
       }
    </script>
 </body>
