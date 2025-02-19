@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 5</h1>
+   <p>
+      Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let evenNum = 0
+         let positiveNum = 0
+         let numGreaterThan100 = 0
+
+         function getResult(num1 = 0, num2 = 0, num3=0) {
+            evenNum = 0
+            positiveNum = 0
+            numGreaterThan100 = 0
+
+            if (num1%2===0) evenNum++
+            if (num2 % 2 === 0) evenNum++
+            if (num3 % 2 === 0) evenNum++
+            if (num1>0) positiveNum++
+            if (num2 > 0) positiveNum++
+            if (num3 > 0) positiveNum++
+            if (num1 >100) numGreaterThan100++
+            if (num2 > 100) numGreaterThan100++
+            if (num3 > 100) numGreaterThan100++
+
+         }
+         getResult(1, -5, 120)
+         document.write(`Кількість парних: ${evenNum}, кількість додатних: ${positiveNum}, кількість більших за 100: ${numGreaterThan100}`)
+      }
+   </script>
+</body>
+</html>

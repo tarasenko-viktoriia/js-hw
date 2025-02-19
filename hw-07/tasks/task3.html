@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Задача 3</h1>
+   <p>
+      Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         function getWorkday() {
+            let numDay = parseInt(prompt("Введіть номер дня від 1 до 7"))
+            let result            
+            if (numDay <6) result = "Робочий день"
+            else result = "Неробочий день"
+            return result 
+         }
+         document.write(`${getWorkday()}`)
+      }
+   </script>
+</body>
+</html>
