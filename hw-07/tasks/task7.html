@@ -8,26 +8,25 @@
 <body>
    <h1>Задача 7</h1>
    <p>
-      Інвестор вклав  тис. грн на 20 років під 20% річних, податок складає 5% від суми прибутку. Визначити за допомогою циклів суму, яку він одержить.
+      Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців (таблиця заповнюється заданим фіксованим повідомленням).
    </p>
    <script>
       if (confirm('Почати тестування?')) {
-         const deposit = parseFloat(prompt("Введіть початкову суму вкладу"))
-         const interest = 20
-         let sumDeposit = deposit
+         function createTable(rows, cols, message) {
+            let table = "<table border='1'>";
 
-         for (let i = 0; i < 20; i++) {
-            const profit = sumDeposit * interest / 100;
+            for (let i = 0; i < rows; i++) {
+               table += "<tr>"; 
+               for (let j = 0; j < cols; j++) {
+                     table += `<td>${message}</td>`; 
+               }
+               table += "</tr>"; 
+            }
 
-            const tax = profit * 0.05;
-
-            sumDeposit += profit - tax;
+            return table += "</table>"; 
 
          }
-
-         document.write(`
-            Інвестор вклав  ${deposit} тис. грн. Через 20 років він отримає: ${sumDeposit.toFixed(2)} тис. грн. 
-         `)
+         let result = document.write(createTable(4, 3, "Hello"))
       }
    </script>
 </body>

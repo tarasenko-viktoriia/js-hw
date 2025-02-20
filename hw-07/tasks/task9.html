@@ -8,17 +8,26 @@
 <body>
    <h1>Задача 9</h1>
    <p>
-      Вивести на екран послідовність символів а о а о а о а о а о …
-      Всього символів 82.  
+      Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди переходимо при кліку на зображення (тег img повине знаходитись у середині тега a))> </a>
    </p>
    <script>
       if (confirm('Почати тестування?')) {
-         let result = "";
-         for (let i = 0; i < 41; i++) {
-            result += "а о ";
+         function getBanner(title, link, imgSrc) {
+            let result = `<div>
+               <h1>${title}</h1>
+               <a href="${link}" target="_blank">
+                  <img src="${imgSrc}" />
+               </a>
+               </div>`;
+            return result;
          }
-         document.write(`${result}`)
-      }
+
+         let title = "Google";
+         let link = "https://www.google.com.ua";
+         let imgSrc = "../img/google.png";
+
+         document.write(getBanner(title, link, imgSrc));
+         }
    </script>
 </body>
 </html>

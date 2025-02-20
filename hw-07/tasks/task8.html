@@ -5,35 +5,22 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
    <style>
-      table,th,td{
-         border: 1px solid grey;
-         text-align:center;
-         } 
-
-      th,td{
-            padding:10px;
-         }
    </style>
 </head>
 <body>
+   <img src="../" alt="">
    <h1>Задача 8</h1>
    <p>
-      Інвестор вклав S тис. грн на 20 років під 20% річних, а потім на 17 років під 27% річних. Визначити за допомогою циклів суму, яку він одержить.
+      Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень передаються у функцію)
    </p>
    <script>
       if (confirm('Почати тестування?')) {
-         const deposit = parseFloat(prompt("Введіть початкову суму вкладу"))
-         let sumDeposit = deposit
+         function getRandomImg() {
+            const randomImg = 1 + Math.floor(Math.random() * 4);
+            return `<img src="../img/img-0${randomImg}.jpg" />`;
+         }
 
-         for (let i = 0; i < 20; i++) {
-            sumDeposit += ((sumDeposit)*20)/100
-         }
-         for (let j = 0; j < 17; j++) {
-            sumDeposit += ((sumDeposit)*27)/100
-         }
-         document.write(`
-            Інвестор вклав  ${deposit} тис. грн. Він отримає: ${sumDeposit.toFixed(2)} тис. грн. 
-         `)
+         document.write(getRandomImg());
       }
    </script>
 </body>

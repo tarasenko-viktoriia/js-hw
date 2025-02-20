@@ -17,7 +17,7 @@
       if (confirm('Почати тестування?')) {
          const cm = parseFloat(prompt("Введіть число сантиметрів, які ви хочете перевести в дюйми"))
          const kg = parseFloat(prompt("Введіть число кілограмів, які ви хочете перевести у фунти"))
-         const kl = parseFloat(prompt("Введіть число кілометрів, які ви хочете перевести в милі"))
+         const km = parseFloat(prompt("Введіть число кілометрів, які ви хочете перевести в милі"))
 
          function getCmToIn (cm) {
             return cm * 0.39370
@@ -25,14 +25,14 @@
          function getKgToLb(kg){
             return kg * 2.20462
          }
-         function getKmToMi(kl) {
-            return kl * 0.621371
+         function getKmToMi(km) {
+            return km * 0.621371
          }
          
          let cmToIn = getCmToIn(cm).toFixed(2)
          let kgToLb = getKgToLb(kg).toFixed(2)
-         let klToMi = getKmToMi(kl).toFixed(2)
-         document.write(`В ${cm} сантиметрах  ${cmToIn} дюймів , в ${kg} кілограмів ${kgToLb} футів, в ${kl} кілометрах ${klToMi} миль`)
+         let kmToMi = getKmToMi(km).toFixed(2)
+         document.write(`В ${cm} сантиметрах  ${cmToIn} дюймів , в ${kg} кілограмів ${kgToLb} фунтів, в ${km} кілометрах ${kmToMi} миль`)
       }
    </script>
 </body>
