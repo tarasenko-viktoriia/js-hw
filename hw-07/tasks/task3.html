@@ -4,6 +4,11 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
 </head>
 <body>
    <h1>Задача 3</h1>
@@ -14,10 +19,7 @@
       if (confirm('Почати тестування?')) {
          function getWorkday() {
             let numDay = parseInt(prompt("Введіть номер дня від 1 до 7"))
-            let result            
-            if (numDay <6) result = "Робочий день"
-            else result = "Неробочий день"
-            return result 
+            return (numDay <6) ? "Робочий день" : "Неробочий день"
          }
          document.write(`${getWorkday()}`)
       }
