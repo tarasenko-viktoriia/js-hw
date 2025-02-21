@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 7</h1>
+   <p>
+      Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:<br>
+      за весь рік;<br>
+      у першій половині року;<br>
+      у другій половині року;<br>
+      за літо;<br>
+      за ІІ квартал;<br>
+      за парні місяці (з парними номерами);<br>
+      за місяці, які є початковими у сезоні (весна, літо, осінь, зима).<br>
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         let payments = [250, 444, 356, 244, 425, 369, 407, 205, 500, 410, 350, 268]
+         function getTotalSum (payments) {
+            let sum = 0
+            for (let i = 0; i < payments.length; i++) {
+               sum += payments[i];
+            }
+            return sum
+         }
+         let totalSum = getTotalSum(payments)
+         document.write(`Загальна сума платіжок за рік: ${totalSum}<br>`)
+
+         function getSumFirstHalfYear (payments) {
+            let sum = 0
+            let firstHalfYear = payments.length / 2
+            for (let i = 0; i < firstHalfYear; i++) {
+               sum += payments[i];
+            }
+            return sum
+         }
+         let sumFirstHalfYear = getSumFirstHalfYear(payments)
+         document.write(`Cума платіжок за  першу половину року: ${sumFirstHalfYear}<br>`)
+
+         function getSumSecondtHalfYear (payments) {
+            let sum = 0
+            let secondHalfYear = (payments.length / 2)
+            for (let i = secondHalfYear; i < payments.length; i++) {
+               sum += payments[i];
+            }
+            return sum
+         }
+         let sumSecondHalfYear = getSumSecondtHalfYear(payments)
+         document.write(`Cума платіжок за другу половину року: ${sumSecondHalfYear}<br>`)
+
+         function getSumSummer (payments) {
+            let sum = 0
+            for (let i = 0; i < payments.length; i++) {
+               if (payments[i] >=6 || payments[i]<9) sum += payments[i];
+            }
+            return sum
+         }
+         let sumSammer = getSumSummer(payments)
+         document.write(`Cума платіжок за літо: ${sumSammer}<br>`)
+      }
+   </script>
+</body>
+</html>

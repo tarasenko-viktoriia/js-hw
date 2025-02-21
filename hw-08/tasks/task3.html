@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 3</h1>
+   <p>
+      <p>
+         Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».
+      </p>
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         function getNameIvan(nameStudent){
+            let numIvan = 0
+            for (let i = 0; i < nameStudent.length; i++) {
+               if(nameStudent[i] === "Іван") numIvan++
+            }
+            return numIvan
+         }
+         
+         let nameStudent = ["Іван", "Марія", "Іван", "Ольга", "Микола", "Іван"]
+
+         document.write(`Іванів ${getNameIvan(nameStudent)}`)
+      }
+   </script>
+</body>
+</html>
