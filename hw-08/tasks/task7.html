@@ -46,7 +46,7 @@
          let sumFirstHalfYear = getSumFirstHalfYear(payments)
          document.write(`Cума платіжок за  першу половину року: ${sumFirstHalfYear}<br>`)
 
-         function getSumSecondtHalfYear (payments) {
+         function getSumSecondHalfYear (payments) {
             let sum = 0
             let secondHalfYear = (payments.length / 2)
             for (let i = secondHalfYear; i < payments.length; i++) {
@@ -54,18 +54,48 @@
             }
             return sum
          }
-         let sumSecondHalfYear = getSumSecondtHalfYear(payments)
+         let sumSecondHalfYear = getSumSecondHalfYear(payments)
          document.write(`Cума платіжок за другу половину року: ${sumSecondHalfYear}<br>`)
 
          function getSumSummer (payments) {
             let sum = 0
-            for (let i = 0; i < payments.length; i++) {
-               if (payments[i] >=6 || payments[i]<9) sum += payments[i];
+            for (let i = 5; i < 8; i++) {
+               sum += payments[i];
             }
             return sum
          }
          let sumSammer = getSumSummer(payments)
          document.write(`Cума платіжок за літо: ${sumSammer}<br>`)
+
+         function getSumSecondQuarter  (payments) {
+            let sum = 0
+            for (let i = 3; i <= 5; i++) {
+               sum += payments[i];
+            }
+            return sum
+         }
+         let sumSecondQuarter = getSumSecondQuarter(payments)
+         document.write(`Cума платіжок за ІІ квартал: ${sumSecondQuarter}<br>`)
+
+         function getSumEvenMonths  (payments) {
+            let sum = 0
+            for (let i = 0; i < payments.length; i+=2) {
+               sum += payments[i];
+            }
+            return sum
+         }
+         let sumEvenMonths= getSumEvenMonths(payments)
+         document.write(`Cума платіжок за парні місяці: ${sumEvenMonths}<br>`)
+
+         function getSumMonthsStartSeason  (payments) {
+            let sum = 0
+            for (let i = 2; i < payments.length; i+=3) {
+               sum += payments[i];
+            }
+            return sum
+         }
+         let sumMonthsStartSeason = getSumMonthsStartSeason(payments)
+         document.write(`Cума платіжок за місяці, які є початковими у сезоні: ${sumMonthsStartSeason}<br>`)
       }
    </script>
 </body>
