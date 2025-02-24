@@ -13,11 +13,48 @@
 <body>
    <h1>Задача 9</h1>
    <p>
-      Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди переходимо при кліку на зображення (тег img повине знаходитись у середині тега a))> </a>
+      Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів. Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель). Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі кораблі.
    </p>
    <script>
       if (confirm('Почати тестування?')) {
-   
+         const numCells = parseInt(prompt("Введіть кількість клітинок."));
+         const cells = [];
+
+
+         for (let i = 0; i < numCells; i++) {
+            cells[i] = 0;
+         }
+
+         const numShips = parseInt(prompt("Введіть кількість кораблів."));
+
+         let placedShips = 0;
+         while (placedShips < numShips) {
+            let randomIndex = Math.floor(Math.random() * numCells); 
+
+            if (cells[randomIndex] === 0) {
+               cells[randomIndex] = 1; 
+               placedShips++; 
+            }
+         }
+         console.log(cells);
+         let sunkShips = 0; 
+
+         while (sunkShips < numShips) {
+            let cellNumberForShot = parseInt(prompt(`Введіть номер клітинки для пострілу. (Від 1 до ${numCells}")`));
+
+            if (cellNumberForShot < 1 || cellNumberForShot > numCells) {
+               alert("Введено некоректний номер клітинки.");
+            } else {
+               if (cells[cellNumberForShot - 1] === 1) { 
+                  sunkShips++
+                  alert(`Влучив в корабель! Потоплено ${sunkShips} кораблів з ${ numShips}.`);
+                  cells[cellNumberForShot - 1] = 0; 
+               } else {
+                  alert("Не влучив!");
+               }
+            }
+         }
+         document.write("Ви потопили всі кораблі! Перемога!");
       }
    </script>
 </body>

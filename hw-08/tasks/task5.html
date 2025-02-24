@@ -13,10 +13,54 @@
 <body>
    <h1>Задача 5</h1>
    <p>
-      Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.
+      Дано послідовність оцінок учня. Підрахувати кількість:<br>
+      1.двійок<br>
+      2.кількість хороших оцінок (добре, відмінно);<br>
+      3.кількість оцінок, які нижче середнього.<br>
    </p>
    <script>
       if (confirm('Почати тестування?')) {
+         let grade  = [5, 2, 5, 2, 5, 5]
+
+         function getNum2(grade) {
+            let result = 0
+            for (let i = 0; i < grade.length; i++) {
+               if (grade[i] === 2)
+               result += 1
+            }
+            return result
+         }
+
+         function getNumGoodGrade (grade) {
+            let result = 0
+            for (let i = 0; i < grade.length; i++) {
+               if (grade[i]>=4 )
+               result += 1
+            }
+            return result
+         }
+
+         function getAverageGrade(grade) {
+            let result = 0
+            for (let i = 0; i < grade.length; i++) {
+               result += grade[i]
+            }
+            const averageGrade = result/grade.length
+
+            return averageGrade
+         }
+         const averageGrade = getAverageGrade(grade).toFixed(2)
+
+         function getNumGradeBelowAverage (grade) {
+            let result = 0
+            for (let i = 0; i < grade.length; i++) {
+               if (grade[i] < averageGrade )
+               result += 1
+            }
+            return result
+         }
+
+         document.write(`Учень має ${getNum2(grade)} двійок, ${getNumGoodGrade (grade)} хороших оцінок (добре, відмінно), ${getNumGradeBelowAverage (grade)} оцінок, які нижче середнього.`)
       }
    </script>
 </body>

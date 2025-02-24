@@ -14,11 +14,31 @@
    <img src="../" alt="">
    <h1>Задача 8</h1>
    <p>
-      Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень передаються у функцію)
+      Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим чином значеннями від -500 до 500). Надаючи користувачу можливість вибирати номери елементів  (поки він не відмовиться). Знаходити сумарний виграш.
+   </p>
    </p>
    <script>
       if (confirm('Почати тестування?')) {
-   
+         const lengthArr = parseInt(prompt("Введіть довжину масиву"))
+         let winningAmount = []
+         winningAmount.length = lengthArr
+         for (let i = 0; i < winningAmount.length; i++) {
+            winningAmount[i] = -500 + Math.floor(Math.random() * 1001)
+         }
+
+         let sumWin = 0;
+         let winNum;
+         do {
+            let input = prompt(`Введіть число від 1 до ${lengthArr} (або натисніть "Скасувати" для виходу)`);
+            
+            if (input === null || input === "") {
+               break;
+            }
+            winNum = parseInt(input);
+            sumWin += winningAmount[winNum - 1];
+         } while (true);
+
+         document.write (`Сума виграшу: ${sumWin}`)
       }
    </script>
 </body>

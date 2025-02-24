@@ -13,15 +13,38 @@
 <body>
    <h1>Задача 4</h1>
    <p>
-      Створити окремі функції, які для 4 чисел знаходять:<br>
-         1.суму;<br>
-         2.добуток;<br>
-         3.середнє арифметичне;<br>
-         4.мінімальне значення.<br>
+      Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :<br>
+      •	починаються на букву «А»;<br>
+      •	перша і остання літери співпадають;<br>
+      •	складаються з більше ніш 5 символів;<br>
    </p>
    <script>
       if (confirm('Почати тестування?')) {
+         const carNumbers = ["A123BC", "B777AA", "AA111AA", "A999AA", "C555C"];
 
+         let startsWithA = 0;
+         let firstAndLastMatch = 0;
+         let moreThanFiveChars = 0;
+
+         for (let i = 0; i < carNumbers.length; i++) {
+         const num = carNumbers[i];
+         
+            if (num[0] === 'A') {
+               startsWithA++;
+            }
+            
+            if (num[0] === num[num.length - 1]) {
+               firstAndLastMatch++;
+            }
+
+            if (num.length > 5) {
+               moreThanFiveChars++;
+            }
+         }
+
+         document.write(`Кількість номерів, що починаються на 'А': ${startsWithA} <br>
+         Кількість номерів, де перша і остання літери співпадають: ${firstAndLastMatch}<br>
+         Кількість номерів, що мають більше 5 символів: ${moreThanFiveChars} `);
       }
    </script>
 </body>
