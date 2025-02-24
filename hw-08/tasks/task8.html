@@ -21,8 +21,7 @@
       if (confirm('Почати тестування?')) {
          const lengthArr = parseInt(prompt("Введіть довжину масиву"))
          let winningAmount = []
-         winningAmount.length = lengthArr
-         for (let i = 0; i < winningAmount.length; i++) {
+         for (let i = 0; i < lengthArr ; i++) {
             winningAmount[i] = -500 + Math.floor(Math.random() * 1001)
          }
 
