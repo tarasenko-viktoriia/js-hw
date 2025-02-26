@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 9</h1>
+   <p>
+      Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const price = [101, 1200, 103, 90, 1885, 1000];
+         const tax = price.map(el => (el * 0.2).toFixed(2));
+         document.write (tax)
+      }
+   </script>
+</body>
+</html>
