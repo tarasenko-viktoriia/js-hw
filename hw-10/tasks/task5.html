@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 5</h1>
+   <p>
+      Дано масив елементів. Знайти добуток додатних елементів
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const arr = [101, -120, -133, 90, -85, 150];
+
+         let result = 1
+         for (let item of arr) {
+            if (item > 0) result *=item
+         }
+
+         document.write(`Добуток додатних елементів: ${result}`)
+      }
+   </script>
+</body>
+</html>

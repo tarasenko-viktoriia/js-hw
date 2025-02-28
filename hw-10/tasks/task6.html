@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 6</h1>
+   <p>
+      Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const arr = [101, 120, 103, 90, 85, 150];
+         arr.forEach((el, index, baseArrRef) => {
+            if (el > baseArrRef[0]) baseArrRef[index] *= 2;
+         })
+         document.write (arr)
+      }
+   </script>
+</body>
+</html>

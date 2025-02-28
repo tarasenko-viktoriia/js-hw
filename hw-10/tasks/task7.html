@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 7</h1>
+   <p>
+      Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.
+   </p>
+   <script>
+      if (confirm('Почати тестування?')) {
+         const arr = [101, 1200, 103, 90, 1885, 1000];
+         arr.forEach((el, index, baseArrRef) => {
+            if (el > 1000) baseArrRef[index] -= baseArrRef[index] * 0.3;
+         })
+         document.write (arr)
+      }
+   </script>
+</body>
+</html>
