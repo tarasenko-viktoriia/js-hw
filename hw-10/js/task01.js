@@ -1,16 +1,21 @@
 "use strict"
+// Задача. Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000).
+// Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.
 
 if (confirm('Почати тестування?')) {
-    // const userNum = parseInt(prompt("Введіть кількість елементів в масиві"))
-    // const prices = []
+    const userNum = parseInt(prompt("Введіть кількість елементів в масиві"))
     
-    // for (let i = 0; i < userNum; i++) {
-    //    let randomPrice = 1 + Math.floor(Math.random() * 10000)
-    //    prices[i]=randomPrice
-    // }
-    const prices = [255, 3690, 9999, 2500, 68]
-    //1
-    // const pricesGreater1000 = prices.map(el => el>1000)
+    function getPricesArr(userNum) {
+        const prices = []
+        for (let i = 0; i < userNum; i++) {
+            let randomPrice = 1 + Math.floor(Math.random() * 10000)
+            prices.push(randomPrice)
+        }
+        return prices
+    }
+    const prices = getPricesArr(userNum) 
 
-    // document.write(`Масив, у якому є тільки ті, що більші за 1000 грн. : ${pricesGreater1000}`)
+    const pricesGreater1000 = prices.filter(el => el>1000)
+
+    document.write(`Масив, у якому є тільки ті, що більші за 1000 грн. : ${pricesGreater1000}`)
 }
