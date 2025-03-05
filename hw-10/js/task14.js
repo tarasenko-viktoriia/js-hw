@@ -111,3 +111,43 @@
 
 // arr.forEach((el, index, arr) => (el < arr.at(-1)) ? arr[index] = arr[0]: el)
 // document.write(arr)
+
+//15
+// function getArr (arr) {
+//     let max = 0
+//     let min = 0
+//     for (let index = 1; index < arr.length; index++) {
+//         if (arr[index]> arr[max]) max = index
+//         if (arr[index] < arr[min]) min = index
+//     }
+//     let minMax = arr[min]
+//     arr[min] = arr[max]
+//     arr[max] = minMax
+
+//     return arr
+// }
+// const arr = [3, 23, 2, 5, 4, 46, 10, 5]
+
+// document.write(getArr (arr))
+
+//16
+// const arr = [3, 23, 2, 5, 4, 46, 10, 5]
+// arr.splice(-1, 1)
+// arr.splice(0, 1)
+// document.write(arr)
+
+//17
+// const arr = [-3, 23, 2, -5, 0, 46, -10, 5]
+// const newArr = arr.sort((a,b) => a-b)
+// document.write(newArr)
+
+//18
+// const arr = [3, 3, 2, 5, 4, 4, 10, 5]
+// let result = 1
+// arr.sort((a,b) => a-b)
+
+// for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] !== arr[i-1]) result++
+// }
+// document.write(arr) 
+// document.write(result)
