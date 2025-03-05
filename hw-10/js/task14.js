@@ -56,20 +56,58 @@
 // document.write(`${sum} <br>`)
 
 //9
-const arr = [3, 9, 21, 13, 15]; 
-let sum = 0;
-let hasEven = false; 
+// const arr = [3, 9, 21, 13, 15]; 
+// let sum = 0;
+// let hasEven = false; 
 
-for (const el of arr) {
-    if (el % 2 === 0) {
-        hasEven = true;
-        break; 
-    }
-    sum += el;
-}
+// for (const el of arr) {
+//     if (el % 2 === 0) {
+//         hasEven = true;
+//         break; 
+//     }
+//     sum += el;
+// }
 
-if (!hasEven) { 
-    sum = arr.slice(1, -1).reduce((prevSum, el) => prevSum + el, 0);
-}
+// if (!hasEven) { 
+//     sum = arr.slice(1, -1).reduce((prevSum, el) => prevSum + el, 0);
+// }
 
-document.write(`${sum} <br>`);
+// document.write(`${sum} <br>`);
+
+//10
+// const arr = [3, 9, 2, 10, 5];
+// const sum = arr.reduce((prevSum, el, index)=> (index % 2 === 0 ? prevSum + el : prevSum ), 0)
+// document.write(`${sum} <br>`)
+
+//11
+// const arr = [3, 23, 2, 5, 3, 16, 10, 5]
+// const sumLastEl = arr.at(-1) + arr.at(-2)
+// console.log(sumLastEl)
+// const sum = arr.reduce(( prevSum, el, index)=> (index % 2 > 0 && el > sumLastEl ? prevSum + el : prevSum ), 0)
+// document.write(`${sum} <br>`)
+
+//12
+// const arr = [3, 23, 2, 5, 3, 16, 10, 5]
+// const maxEl1 = Math.max(...arr)
+// console.log (maxEl1)
+// const maxEl2 = arr.reduce((prevMax, el)=> (el > prevMax ? el : prevMax), 0)
+// document.write(`${maxEl2} <br>`)
+
+//13
+// const arr = [3, 23, 2, 5, 3, 16, 10, 5]
+// const num = 12
+
+// let sum = 0 
+// for (let index = 0; index < arr.length; index++) {
+//     sum += arr[index]
+// }
+
+// const averageNum = parseFloat((sum / arr.length).toFixed(2));
+// arr.forEach((el, index, arr) => (el > num) ? arr[index] = averageNum: el)
+// document.write(arr)
+
+//14
+// const arr = [3, 23, 2, 5, 4, 16, 10, 5]
+
+// arr.forEach((el, index, arr) => (el < arr.at(-1)) ? arr[index] = arr[0]: el)
+// document.write(arr)
