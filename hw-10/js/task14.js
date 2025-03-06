@@ -141,7 +141,8 @@
 // const newArr = arr.sort((a,b) => a-b)
 // document.write(newArr)
 
-//18
+
+// Найдите количество различных элементов данного массива.
 // const arr = [3, 3, 2, 5, 4, 4, 10, 5]
 // let result = 1
 // arr.sort((a,b) => a-b)
@@ -151,3 +152,13 @@
 // }
 // document.write(arr) 
 // document.write(result)
+
+// Найдите сумму наибольшего и наименьшего элементов массива.
+const arr = [-3, -23, -2, -5, -3, -16, -10, -5]
+const maxEl = arr.reduce((prevMax, el)=> (el > prevMax ? el : prevMax), -Infinity)
+const minEl = arr.reduce((prevMin, el)=> (el < prevMin? el : prevMin), +Infinity)
+
+const sum = maxEl +minEl
+
+document.write(`${sum} <br>`)
+
