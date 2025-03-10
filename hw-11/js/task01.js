@@ -1,92 +1,118 @@
 "use strict"
 
-const arr = [
-//   0  1   2  3
-    [1, 2, 3, 4], //0
-    [5, 6, 7, 8],//1
-    [1, 2, 1, 4], //2
-    [5, 1, 7, 1],//3
-]
+function generateRandomTable(rowsNum, colsNum, minValue = 1, maxValue = 100) {
+  const arr = []
+  for (let rowIndex = 0; rowIndex < rowsNum; rowIndex++) {
+    arr.push([])
+    for (let colIndex = 0; colIndex < colsNum; colIndex++) {
+      const randomNum = minValue +Math.floor(Math.random() * (maxValue-minValue +1))
+      arr[rowIndex].push(randomNum)
+    }
+  }
+  return arr
+}
+const arr = generateRandomTable(4,4)
 
 const middleRow = Math.floor(arr.length / 2)
 const rowLength = arr.length
 
 //номери рядків від 0 до половини, стовпці від 0 до половини
-let sum01 = 0
-for (let row = 0; row < middleRow; row++) {
-    for (let column = 0; column < Math.floor(arr[row].length/2); column++) {
-        sum01 += arr[row][column]
-    }
+function getSumRowNum0HalfCol0Half(arr) {
+  let sum = 0
+  for (let row = 0; row < middleRow; row++) {
+      for (let column = 0; column < Math.floor(arr[row].length/2); column++) {
+          sum += arr[row][column]
+      }
+  }
+  return sum
 }
-document.write(`Сума номерів рядків від 0 до половини, стовпці від 0 до половини :${sum01} <br>`)
+document.write(`Сума номерів рядків від 0 до половини, стовпці від 0 до половини :${getSumRowNum0HalfCol0Half(arr)} <br>`)
 
 // номери рядків від 0 до половини, стовпці від половини до кінця
-let sum02 = 0
-for (let row = 0; row < middleRow ; row++) {
-    for (let column = Math.floor(arr[row].length/2); column < arr[row].length; column++) {
-        sum02 += arr[row][column]
-    }
+function getSumRowNum0HalfColHalfEnd(arr) {
+  let sum = 0
+  for (let row = 0; row < middleRow ; row++) {
+      for (let column = Math.floor(arr[row].length/2); column < arr[row].length; column++) {
+          sum += arr[row][column]
+      }
+  }
+  return sum
 }
 
-document.write(`Сума номерів рядків від 0 до половини, стовпці від половини до кінця: ${sum02} <br>`)
+document.write(`Сума номерів рядків від 0 до половини, стовпці від половини до кінця: ${getSumRowNum0HalfColHalfEnd(arr)} <br>`)
 
 // номери рядків (від половини до кінця, стовпці від 0 до половини)
-let sum03 = 0
-for (let row = middleRow; row < rowLength; row++) {
-    for (let column = 0; column < Math.floor(arr[row].length/2); column++) {
-        sum03 += arr[row][column]
-    }
+function getSumRowNumHalfEndCol0Half(arr) {
+  let sum = 0
+  for (let row = middleRow; row < rowLength; row++) {
+      for (let column = 0; column < Math.floor(arr[row].length/2); column++) {
+          sum += arr[row][column]
+      }
+  }
+  return sum
 }
 
-document.write(`Сума номерів рядків (від половини до кінця, стовпці від 0 до половини): ${sum03} <br>`)
+document.write(`Сума номерів рядків (від половини до кінця, стовпці від 0 до половини): ${getSumRowNumHalfEndCol0Half(arr)} <br>`)
 
 
 // номери рядків від половини до кінця , стовпці від половини до кінця
-let sum04 = 0
-for (let row = middleRow; row < rowLength; row++) {
-    for (let column = Math.floor(arr[row].length/2); column < arr[row].length; column++) {
-        sum04 += arr[row][column]
-    }
+function getSumRowNumHalfEndColNumHalfEnd(arr) {
+  let sum = 0
+  for (let row = middleRow; row < rowLength; row++) {
+      for (let column = Math.floor(arr[row].length/2); column < arr[row].length; column++) {
+          sum += arr[row][column]
+      }
+  }
+  return sum
 }
 
-document.write(`Сума номерів рядків від половини до кінця , стовпці від половини до кінця: ${sum04} <br>`)
+document.write(`Сума номерів рядків від половини до кінця , стовпці від половини до кінця: ${getSumRowNumHalfEndColNumHalfEnd(arr)} <br>`)
 
 
 // Суму парних рядків
-let sum05 = 0
-for (let row = 0; row < rowLength; row+=2) {
-    for (let column = 0; column < arr[row].length; column++) {
-        sum05 += arr[row][column]
-    }
+function getSumEvenRows(arr) {
+  let sum = 0
+  for (let row = 0; row < rowLength; row+=2) {
+      for (let column = 0; column < arr[row].length; column++) {
+          sum += arr[row][column]
+      }
+  }
+  return sum
 }
 
-document.write(`Сума парних рядків: ${sum05} <br>`)
+document.write(`Сума парних рядків: ${getSumEvenRows(arr)} <br>`)
 
 // Суму непарних стовпців
-let sum06 = 0
-for (let row = 0; row < rowLength; row++) {
-    for (let column = 1; column < arr[row].length; column+=2) {
-        sum06 += arr[row][column]
-    }
+function getSumOddColumns(arr) {
+  let sum = 0
+  for (let row = 0; row < rowLength; row++) {
+      for (let column = 1; column < arr[row].length; column+=2) {
+          sum += arr[row][column]
+      }
+  }
+  return sum
 }
 
-document.write(`Сума непарних стовпців: ${sum06} <br>`)
+document.write(`Сума непарних стовпців: ${getSumOddColumns(arr)} <br>`)
 
 
 // У парних рядках – непарні стовпці, у непарних – парні.
-let sum07 = 0
-for (let row = 0; row < rowLength; row++) {
+function getSumEvenRowsHaveOddColsOddRowsHaveEvenCols(arr) {
+  let sum = 0
+  for (let row = 0; row < rowLength; row++) {
     if (row % 2 ===0) {
         for (let column = 1; column < arr[row].length; column+=2) {
-            sum07 += arr[row][column]
+            sum += arr[row][column]
         }
     } else {
         for (let column = 0; column < arr[row].length; column+=2) {
-            sum07 += arr[row][column]
+            sum += arr[row][column]
         }
     }
-    
+  }
+  return sum
 }
 
-document.write(`У парних рядках – непарні стовпці, у непарних – парні: ${sum07} <br>`)
+
+document.write(`У парних рядках – непарні стовпці, у непарних – парні: ${getSumEvenRowsHaveOddColsOddRowsHaveEvenCols(arr)} <br>`)
 
