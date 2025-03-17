@@ -1,7 +1,7 @@
 "use strict"
-
 // Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів та порівнянь чисел під час сортування бульбашкою
 
+// Для розглянутих методів сортування спробувати вивести етапи сортування шляхом виведення відповідних таблиць за зразком .
 
 function generateRandomArr(arrLength, minValue = 1, maxValue = 100) {
   const arr = []
@@ -23,6 +23,7 @@ do {
       arr[i-1] = arr[i]
       arr[i]= tmp
       change = true
+      document.write(`${JSON.stringify(arr)} <br>`)
       numExchanges +=1
     }
     numComparisons+=1

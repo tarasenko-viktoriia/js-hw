@@ -1,20 +1,62 @@
 "use strict"
-// Задача. Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000)
-//          Визначити, чи є ціна, що менше 1000
+// Дано масив імен. Застосовуючи відповідне сортування та бінарний пошук визначити, 
+// чи є у масиві ім’я довжиною 5 символів і під яким індексом.
+
 if (confirm('Почати тестування?')) {
-    const userNum = parseInt(prompt("Введіть кількість елементів в масиві"))
-    
-    function getPricesArr(userNum) {
-        const prices = []
-        for (let i = 0; i < userNum; i++) {
-            let randomPrice = 1 + Math.floor(Math.random() * 10000)
-            prices.push(randomPrice)
+    function generateRandomArr(arrLength) { 
+        const arr = []
+        for (let i = 0; i < arrLength; i++) {
+            const userName = prompt("Введіть ваше ім'я на англійській мові")
+            arr.push(userName.toLowerCase()) 
         }
-        return prices
+        return arr
     }
-    const prices = getPricesArr(userNum) 
 
-    const elementSome = prices.some(el => el < 1000)
+    const arr = generateRandomArr(3)
 
-    document.write(`Чи є ціна, що менше 1000 : ${elementSome}`)
+    function insertSort(arr) {
+        for (let i = 1; i < arr.length; i++) {
+            const currentElement = arr[i]
+            let k = i - 1
+            while (k >= 0 && arr[k] > currentElement) {
+                arr[k + 1] = arr[k]
+                k -= 1
+            }
+            arr[k + 1] = currentElement 
+        }
+        return arr
+    }
+
+    function findNameWithLengthFive(a) {
+        let start = 0
+        let end = a.length - 1
+
+        while (start <= end) {
+            const middle = Math.floor((start + end) / 2)
+            const middleName = a[middle]
+
+            if (middleName.length === 5) {
+                return middle 
+            }
+
+            if (middleName.length < 5) {
+                start = middle + 1
+            } else {
+                end = middle - 1
+            }
+        }
+
+        return -1 
+    }
+
+    const sortedArray = insertSort(arr)
+    console.log("Відсортований масив:", sortedArray)
+
+    const index = findNameWithLengthFive(sortedArray)
+
+    if (index !== -1) {
+        document.write(`Ім'я довжиною 5 символів знайдено під індексом ${index}`)
+    } else {
+        document.write(`Ім'я довжиною 5 символів не знайдено`)
+    }
 }

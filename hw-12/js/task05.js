@@ -1,22 +1,56 @@
 "use strict"
-// Задача. Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000)
-//          Підрахувати кількість змін цін
+// Дано масив імен. Застосовуючи відповідне сортування та бінарний пошук визначити, 
+// чи є у масиві ім’я «Olga» і під яким індексом.
+
 if (confirm('Почати тестування?')) {
-    const userNum = parseInt(prompt("Введіть кількість елементів в масиві"))
-    
-    function getPricesArr(userNum) {
-        const prices = []
-        for (let i = 0; i < userNum; i++) {
-            let randomPrice = 1 + Math.floor(Math.random() * 10000)
-            prices.push(randomPrice)
+
+    function getUserName(length) {
+        const arr = []
+        for (let i = 0; i < length; i++) {
+            const name = prompt("Введіть ім'я корисувача")
+            arr.push(name)
         }
-        return prices
+        return arr
     }
-    const prices = getPricesArr(userNum) 
 
-    const numChanges = prices.reduce((prevSum, el, index, arr) => 
-        index > 0 && el !== arr[index - 1] ? prevSum + 1 : prevSum
-    , 0)
+    const arr = getUserName(3)
 
-    document.write(`Кількість зімн: ${numChanges}`)
+    function getSortArr(arr) {
+        let change, endIndex = arr.length
+
+        do {
+        change = false
+        for (let i = 1; i < endIndex; i++) {
+            if (arr[i-1] > arr[i]) {
+            let tmp = arr [i-1]
+            arr[i-1] = arr[i]
+            arr[i]= tmp
+            change = true
+            }
+        }
+        endIndex--
+        }while(change)
+
+        return arr
+    }
+    
+
+    function findIndex_binarySearch(a, searchElement) {
+        let start = 0
+        let end = a.length-1
+        searchElement = searchElement.toLowerCase()
+        while (start <= end) {
+            const middle = Math.floor((start + end) / 2)
+            if (a[middle] === searchElement) return middle
+            if (a[middle] < searchElement) start = middle + 1
+            if (a[middle] > searchElement) end = middle - 1
+        }
+        return -1
+    }
+
+    const sortedArray = getSortArr(arr)
+    const searchIndex = findIndex_binarySearch(sortedArray, "Olga")
+
+    if (searchIndex !== -1 ) document.write(`"Olga" є в масиві під індексом ${searchIndex}`)
+    else document.write(`"Olga" не входить у масив`)
 }
