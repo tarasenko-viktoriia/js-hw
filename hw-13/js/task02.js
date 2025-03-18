@@ -1,44 +1,51 @@
 "use strict"
-// Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів та порівнянь чисел під час сортування змішуванням.
+// Дано масив імен спортсменів. Розробити програму для виведення усіх можливих результатів змагань (списки імен у відповідності до місць, які вони займуть).
 
-function generateRandomArr(arrLength, minValue = 1, maxValue = 100) {
-    const arr = []
-    for (let i = 0; i < arrLength; i++) {
-      const randomNum = minValue +Math.floor(Math.random() * (maxValue-minValue +1))
-        arr.push(randomNum)
-    }
-    return arr
-}
-const arr = generateRandomArr(30)
 
-let leftIndex=0, rightIndex = arr.length-1, numExchanges = 0, numComparisons = 0
-while (leftIndex<rightIndex) {
-    let change = false
-    for (let i = leftIndex+1; i <= rightIndex; i++) {
-        if (arr[i-1] > arr[i]) {
-            let tmp = arr [i-1]
-            arr[i-1] = arr[i]
-            arr[i]= tmp
-            change = true
-            numExchanges +=1
+// if (confirm('Почати тестування?')) {
+    // function generateRandomArr(arrLength) { 
+    //     const arr = []
+    //     for (let i = 0; i < arrLength; i++) {
+    //         const userName = prompt("Введіть ваше ім'я на англійській мові")
+    //         arr.push(userName.toLowerCase()) 
+    //     }
+    //     return arr
+    // }
+
+    // const arr = generateRandomArr(3)
+
+
+// }
+
+
+// function generateCombinations(step, resArr, names) {
+//     if (step === names.length) document.write(`${resArr} <br>`);
+//     else {
+//         for (let i = 0; i < names.length; i++) {
+//             generateCombinations(step + 1, [...resArr, names[i]], names);
+//         }
+//     }
+// }
+
+// let names = ["olga", "ivan"]; 
+// generateCombinations(0, [], names);
+
+function generateCombinations(names, used = [], resArr = []) {
+    if (resArr.length === names.length) document.write(`${resArr} <br>`)
+
+
+    for (let i = 0; i < names.length; i++) {
+        if (!used[i]) {
+            used[i] = true
+            resArr.push(names[i])
+
+            generateCombinations(names, used, resArr)
+
+            used[i] = false
+            resArr.pop()
         }
-        numComparisons+=1
     }
-    rightIndex--
-    if(change === false) break
-
-    change = false
-    for (let i = rightIndex; i > leftIndex; i--) {
-        if (arr[i-1] > arr[i]) {
-            let tmp = arr [i-1]
-            arr[i-1] = arr[i]
-            arr[i]= tmp
-            change = true
-            numExchanges +=1
-        }
-        numComparisons+=1
-    }
-    leftIndex++
-    if(change === false) break
 }
-document.write(`<h3>Число обмінів становить ${numExchanges}, а число порівнянь - ${numComparisons}</h3>`)
+
+let names = ["olga", "petro"]
+generateCombinations(names);
