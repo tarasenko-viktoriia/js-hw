@@ -14,9 +14,10 @@ function generateRandomArr(arrLength, minValue = 1, maxValue = 100) {
 
 const arr = generateRandomArr(30)
 
-let numExchanges = 0, numComparisons = 0
+
 
 function insertSort(arr) {
+    let numExchanges = 0, numComparisons = 0
     for (let i = 1; i < arr.length; i++) {
         const currentElement = arr[i]
         let k = i - 1
@@ -34,7 +35,8 @@ function insertSort(arr) {
         }
         arr[k + 1] = currentElement 
     }
-}
 
-insertSort(arr)
+    return [arr, numExchanges, numComparisons];
+}
+const [arrSort, numExchanges, numComparisons] = insertSort(arr)
 document.write(`<h3>Число обмінів становить ${numExchanges}, а число порівнянь - ${numComparisons}</h3>`)
