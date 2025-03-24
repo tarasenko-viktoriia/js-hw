@@ -9,7 +9,7 @@ if (confirm('Почати тестування?')) {
         else 
             setTimeout(() => {
                 window.location.href = 'https://www.ukr.net/'
-            }, 20000);  
+            }, 20000) 
     }
     getNews() 
 }
