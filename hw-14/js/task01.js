@@ -77,7 +77,7 @@ console.log(sponsorsList)
 
 // ==========5
 
-function getYearWhithLargestValue(sites) {
+function getYearWithLargestValue(sites) {
     let maxValue = -Infinity
     let yearWithMaxValue = 0
     for (const site of sites) {
@@ -89,7 +89,7 @@ function getYearWhithLargestValue(sites) {
     return yearWithMaxValue; 
 }
 
-const  yearWhithLargestValue =  getYearWhithLargestValue(sites)
+const  yearWhithLargestValue =  getYearWithLargestValue(sites)
 document.write( `Рік, коли прибуток був найбільшим: ${yearWhithLargestValue} <br>`)
 
 // ==========6
