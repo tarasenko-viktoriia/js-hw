@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ДЗ №15</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+      h1 {
+         text-align: center;
+         color: rgba(63, 63, 63, 0.834);
+         font-size: 3.125rem;
+      }
+      a {
+         text-decoration: none;
+         display: inline-block;
+         color: inherit;
+      }
+      h3 > span {
+         text-transform: uppercase;
+         color: rgba(255, 0, 0, 0.423);
+      }
+      li {
+         list-style: none;
+      }
+      p{
+         color: rgba(63, 63, 63, 0.747);
+      }
+      .grid-block {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: .9375rem;
+         padding: 0;
+      }
+      .grid-block__item {
+         border: 1px solid rgba(63, 63, 63, 0.834);
+         padding: .9375rem;
+         background-color: rgba(240, 248, 255, 0.447);
+         cursor: pointer;
+      }
+   </style>
+</head>
+<body>
+   <h1>ДЗ №15</h1>
+   <ol class="grid-block">
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task1.html">
+            <h3> Задача 1</h3>
+            <p>
+               Створити клас TDate для роботи із датами у форматі “день.місяць.рік”. Дата представляється структурою із трьома полями. Реалізувати методи збільшення/зменшення дати на певну кількість днів, місяців чи років. Введення та виведення дати реалізувати за допомогою методу  toString.
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task2.html">
+            <h3>Задача 2</h3>
+            <p>
+               Створити клас TMoney для роботи з грошовими сумами. Сума повинна зберігатися у вигляді доларового еквіваленту. Реалізувати методи додавання/вилучення грошової маси, вказуючи необхідну суму у гривнях, та визначення курсу долара, при якому сума у гривнях збільшиться на 100. Курс долара зберігати в окремому полі. 
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task3.html">
+            <h3>
+               Задача 3 
+            </h3>
+            <p>
+               Об’єкт “Фірма” (використати члени-класи)
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task4.html">
+            <h3>
+               Задача 4
+            </h3>
+            <p>
+               Створити клас TBankomat, який моделює роботу банкомата. Клас повинен містити поля для зберігання кількості купюр кожного із номіналів від 5 до 200 гривень. Реалізувати методи знаходження максимальної та мінімальної сум, які може видати банкомат, та метод зняття деякої суми.            </p>
+         </a>
+      </li>
+   </ol>
+</body>
+</html>
