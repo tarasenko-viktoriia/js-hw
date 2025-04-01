@@ -1,26 +1,30 @@
 "use strict"
-// Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому випадку.
-// Поля(властивості)
-// Масив, у якому зберігається поле з зайцями
-// Методи (дії)
-// Метод пострілу (задається позиція пострілу)
-// Виведення ігрового поля
-if (confirm('Почати тестування?')) {
-   const shootingGallery = {
-      playingField: [0, 0, 0, 1],
+// Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з них є функція знаходження суми, 
+// а у іншому – функція для знаходження добутку тих, які знаходяться між заданими мінімальним і максимальних значенням.
+// Використати обидва методи стосовно обидвох об’єктів (використати call, apply)
 
-      posterior(){
-         const userPosterior = parseInt(prompt(`Введіть позицію пострілу від 1 до ${this.playingField.length}`))
+const obj1 = {
+   arr: [2, 4, 6, 8],
 
-         if(this.playingField[userPosterior - 1] === 1){
-            alert("Ви влучили у зайця!")
-            this.playingField[userPosterior-1] = 0
-         } else alert('Немає зайця в цьому квадраті.')
-      },
-      getPlayingField (){
-         document.write(this.playingField)
-      }
+   getSum(){
+      return this.arr.reduce((prevSum, arr) => prevSum + arr, 0)
    }
-   shootingGallery.posterior()
-   shootingGallery.getPlayingField ()
 }
+
+const obj2 = {
+   arr: [10, 8, 7, 6],
+
+   getProduct(min, max) {
+      let filteredNumbers = this.arr.filter(num => num >= min && num <= max)
+      if (filteredNumbers.length === 0) {
+         return 0
+      }
+      return filteredNumbers.reduce((product, num) => product * num, 1)
+   }
+}
+console.log(obj1.getSum())
+console.log(obj2.getProduct(6, 7))
+console.log(obj1.getSum.call(obj2))
+console.log(obj2.getProduct.call(obj1,6, 8))
+console.log(obj1.getSum.apply(obj2))
+console.log(obj2.getProduct.apply(obj1,[6, 8]))

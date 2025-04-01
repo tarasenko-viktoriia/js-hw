@@ -51,5 +51,5 @@ if (confirm('Почати тестування?')) {
         },
     }
 
-    const numberPassengers = auto.getNumberPassengers()
+    auto.getNumberPassengers()
 }

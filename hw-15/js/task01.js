@@ -9,18 +9,18 @@ if (confirm('Почати тестування?')) {
    const shootingGallery = {
       playingField: [0, 0, 0, 1],
 
-      posterior(){
-         const userPosterior = parseInt(prompt(`Введіть позицію пострілу від 1 до ${this.playingField.length}`))
+      shoot(){
+         const userShoot = parseInt(prompt(`Введіть позицію пострілу від 1 до ${this.playingField.length}`))
 
-         if(this.playingField[userPosterior - 1] === 1){
+         if(this.playingField[userShoot - 1] === 1){
             alert("Ви влучили у зайця!")
-            this.playingField[userPosterior-1] = 0
+            this.playingField[userShoot - 1] = 0
          } else alert('Немає зайця в цьому квадраті.')
       },
       getPlayingField (){
          document.write(this.playingField)
       }
    }
-   shootingGallery.posterior()
+   shootingGallery.shoot()
    shootingGallery.getPlayingField ()
 }
