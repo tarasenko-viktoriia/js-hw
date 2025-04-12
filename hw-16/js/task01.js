@@ -1,26 +1,49 @@
 "use strict"
-// Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому випадку.
-// Поля(властивості)
-// Масив, у якому зберігається поле з зайцями
-// Методи (дії)
-// Метод пострілу (задається позиція пострілу)
-// Виведення ігрового поля
-if (confirm('Почати тестування?')) {
-   const shootingGallery = {
-      playingField: [0, 0, 0, 1],
+// Створити клас TDate для роботи із датами у форматі “день.місяць.рік”. Дата представляється структурою із трьома полями. Реалізувати методи збільшення/зменшення дати на певну кількість днів, місяців чи років. Введення та виведення дати реалізувати за допомогою методу toString.
 
-      shoot(){
-         const userShoot = parseInt(prompt(`Введіть позицію пострілу від 1 до ${this.playingField.length}`))
-
-         if(this.playingField[userShoot - 1] === 1){
-            alert("Ви влучили у зайця!")
-            this.playingField[userShoot - 1] = 0
-         } else alert('Немає зайця в цьому квадраті.')
-      },
-      getPlayingField (){
-         document.write(this.playingField)
-      }
+class TDate {
+   constructor(day, month, year) {
+      this.day = day
+      this.month = month
+      this.year = year
    }
-   shootingGallery.shoot()
-   shootingGallery.getPlayingField ()
+   addDays(day){
+      let date = new Date(this.year, this.month - 1, this.day)
+      date.setDate(date.getDate() + day)
+
+      this.day = date.getDate()
+      this.month = date.getMonth() + 1
+      this.year = date.getFullYear()
+   }
+   addMonth(months) {
+      let newMonth = this.month + months
+      if (newMonth > 12) {
+         this.year += Math.floor(newMonth / 12)
+         newMonth = newMonth % 12
+         if (newMonth === 0) {
+            newMonth = 12
+         }
+      } else if (newMonth <= 0) {
+         this.year += Math.floor(newMonth / 12) - 1
+         newMonth = 12 + (newMonth % 12)
+      }
+
+      this.month = newMonth
+   }
+   addYears(years){
+      this.year += years
+   }
+   toString() {
+      const days = this.day.toString().padStart(2, '0');
+      const months = this.month.toString().padStart(2, '0');
+      return `${days}.${months}.${this.year}<br>`;
+   }
 }
+const myTime = new TDate(4, 2, 1997)
+document.write(myTime.toString())
+myTime.addYears(10)
+document.write(myTime.toString())
+myTime.addMonth(10)
+document.write(myTime.toString())
+myTime.addDays(40)
+document.write(myTime.toString())

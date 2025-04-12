@@ -35,12 +35,11 @@ class TMoney {
         return `На рахунку ${this.#moneyUSD.toFixed(2)} доларів США`
     }
 }
-const myMoney = new TMoney()// Створюємо об'єкт
-myMoney.addingMoney(500)// Додаємо 500 грн
+const myMoney = new TMoney()
+myMoney.addingMoney(500)
 document.write(myMoney.toString() + "<br>") 
 
-myMoney.withdrawingMoney(200)// Знімаємо 200 грн
+myMoney.withdrawingMoney(200)
 document.write(myMoney.toString() + "<br>")
 
-// Отримуємо новий курс
 document.write(`Новий курс: ${myMoney.getNewExchangeRate().toFixed(2)} грн/USD`)
