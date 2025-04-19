@@ -1,20 +1,27 @@
 "use strict"
-// Подорож складається з 3 етапів. На кожному етапі користувач може вибрати один з видів транспорту (авто, автобус, літак - випадаючий список), харчування (сніданок, обід, вечеря – checkbоx) та одного з 3-х гідів(використати  - radio buttons). Ціни визначте самі. Підрахувати загальну вартість.
-function getTotalPrice() {
-   const selectList = document.querySelectorAll("select")
-   let sumSelectList = 0
-   for (const select of selectList) {
-      sumSelectList += parseFloat(select.value)
-   }
+// Відобразити падаючий сніг. Сніжинка з’являється у верхній частині екрану (top =0) і з випадковою швидкістю рухається вниз (у setInterval викликати метод, у якому додавати крок до top). Як тільки сніжинка досягає нижньої частини екрану (top>maxTop) вона знову повинна з’явитись у верхній частині екрану (top=0).
+function snowfall() {
+   const snowflake =  document.createElement("span")
+   snowflake.innerText = "❄"
 
-   const inputsList= document.querySelectorAll("input")
-   let sumInputsList = 0
-   for (const inputEl of inputsList) {
-      if(inputEl.checked) sumInputsList += parseFloat (inputEl.value)
-   }
+   let topPosition = 0
+   let leftPosition = Math.random() * window.innerWidth
+   const fallSpeed = 1 + Math.random() * 3
 
-   document.getElementById('result').innerText = sumSelectList  + sumInputsList
+   snowflake.style.left = leftPosition + "px"
+   snowflake.style.top = topPosition + "px"
+   document.body.appendChild(snowflake)
+
+   setInterval(() => {
+      topPosition += fallSpeed
+      snowflake.style.top = topPosition + "px"
+
+      if (topPosition > window.innerHeight) {
+         topPosition = 0
+         snowflake.style.left = Math.random() * window.innerWidth + "px"
+      }
+   }, 50)
 }
-window.onload = function () {
-   document.querySelector('button').onclick = getTotalPrice
+for (let i = 0; i < 100; i++) {
+   snowfall()
 }
