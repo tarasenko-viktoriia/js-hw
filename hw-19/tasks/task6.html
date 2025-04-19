@@ -8,24 +8,38 @@
       body {
          background-color: rgba(135, 171, 222, 0.526);
       }
+      .container {
+         display: flex;
+         gap: 40px;
+      }
+      .athletes-container {
+         width: 45%;
+      }
+      ul {
+         list-style: none;
+         padding: 0;
+      }
+      li {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin: 5px 0;
+      }
+      button {
+         cursor: pointer;
+         padding: 4px 8px;
+         border-radius: 4px;
+      }
    </style>
 </head>
 <body>
    <h1>Задача 6</h1>
    <p>
-      Користувач задає кількість оцінок і натискає на кнопку «get table». В результаті формується таблиця з input, куди користувач вводить оцінки. Після цього натискає на кнопку “get sum” і знаходить середнє значення.
+      Дано список спортсменів. Потрібно сформувати список тих, які будуть брати участь у змаганні. При цьому є два стовпці. В одному відображені всі спортсмени, в іншому – список тих, хто був вибраний. При натисканні на зелену стрілку спортсмен переміщається у список для змагань. При натисканні на червону стрілку спортсмен переміщається у загальний список.
    </p>
-   <label>
-      Number of assessments
-      <input type="number" id="num" value="0">
-   </label><br>
-   <button id="getTable">Get table</button>
-   <hr>
-   <div id="table-container">
-
-   </div>
-   <div>
-      Sum = <span id="result"></span>
+   <div class="container">
+      <div class="athletes-container" id="all-athletes"></div>
+      <div class="athletes-container" id="selected-athletes"></div>
    </div>
    <script src="../js/task06.js"></script>
 </body>
