@@ -1,14 +1,23 @@
 "use strict"
-// Зробити конвертер валют (курси валют – константи у скрипті)
-function convert() {
-   const dollarRate = 42
-   const euroRate = 44
-   const sumGrn = parseFloat(document.getElementById('grn').value)
-   const dollarsAmount = sumGrn / dollarRate
-   const euroAmount = sumGrn / euroRate
-   document.getElementById('sumInDollar').value = dollarsAmount.toFixed(2)
-   document.getElementById('sumInEuro').value = euroAmount.toFixed(2)
+// Створити службове авто (водій, марка, номер). Створити клас таким чином, щоб можна було створити тільки один екземпляр цього класу.
+
+class CompanyCar {
+   static car
+
+   constructor (driver, brand, number) {
+      if(CompanyCar.car) return CompanyCar.car
+      this.driver = driver
+      this.brand = brand
+      this.number = number
+      CompanyCar.car = this
+   }
+
+   toString (){
+      return `Водій службового авто: ${this.driver}, марка службового авто: ${this.brand}, номер службоовго авто: ${this.number}<br>`
+   }
 }
-window.onload = function () {
-   document.querySelector('button').onclick = convert
-}
+
+const car1 = new CompanyCar("Oleg", "Opel", "121212")
+const car2 = new CompanyCar("Petro", "Mercedes", "222222")
+document.write(car1)
+document.write(car2)

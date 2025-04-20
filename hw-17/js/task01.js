@@ -1,51 +1,34 @@
 "use strict"
-// Розробити калькулятор
+// Створити клас, що дозволяє виконувати такі операції над масивами: знаходження кількості додатних, кількості від’ємних, кількість входжень деякого числа (статичні методи)
 
-function calculate(operation) {
-  const firstNum = parseFloat(document.getElementById('firstNumber').value)
-  const secondNum= parseFloat(document.getElementById('secondNumber').value)
+class MyArray {
 
-  let result
+  static getPositiveNum (arr){
+    let positiveNum = 0
+    for (const element of arr) {
+      if(element > 0) positiveNum++
+    }
 
-  switch (operation) {
-    case "addition": result = firstNum + secondNum
-      break;
-    case "subtraction": result = firstNum - secondNum
-      break
-    case "multiplication": result = firstNum * secondNum
-      break
-    case "division": result = firstNum / secondNum
-      break
-  }  
-  document.getElementById('result').value = result
-}
-window.onload = function () {
-  document.getElementById('addition').onclick = () => calculate('addition')
-  document.getElementById('subtraction').onclick = () => calculate('subtraction')
-  document.getElementById('multiplication').onclick = () => calculate('multiplication')
-  document.getElementById('division').onclick = () => calculate('division')
-}
-// function addition() {
-//   const firstNum = parseFloat(document.getElementById('firstNumber').value)
-//   const secondNum= parseFloat(document.getElementById('secondNumber').value)
-//   const addition = firstNum + secondNum
-//   document.getElementById('result').value = addition
-// }
-// function subtraction() {
-//   const firstNum = parseFloat(document.getElementById('firstNumber').value)
-//   const secondNum= parseFloat(document.getElementById('secondNumber').value)
-//   const subtraction = firstNum - secondNum
-//   document.getElementById('result').value = subtraction
-// }
-// function multiplication() {
-//   const firstNum = parseFloat(document.getElementById('firstNumber').value)
-//   const secondNum= parseFloat(document.getElementById('secondNumber').value)
-//   const multiplication = firstNum * secondNum
-//   document.getElementById('result').value = multiplication
-// }
-// function division() {
-//   const firstNum = parseFloat(document.getElementById('firstNumber').value)
-//   const secondNum= parseFloat(document.getElementById('secondNumber').value)
-//   const division = firstNum / secondNum
-//   document.getElementById('result').value = division
-// }
+    return positiveNum
+  }
+  static getNegativeNum (arr){
+    let negativeNum = 0
+    for (const element of arr) {
+      if(element < 0) negativeNum++
+    }
+    return negativeNum
+  }
+
+  static getNumOfRepetitions(arr, num){
+    let numOfRepetitions = 0
+    for (const element of arr) {
+      if(element === num) numOfRepetitions++
+    }
+    return numOfRepetitions
+  }
+} 
+const arr = [1, -3, 5, 1, -2]
+const num = 1
+document.write(`Кількість додатніх чисел: ${MyArray.getPositiveNum(arr)} <br>`)
+document.write(`Кількість від'ємних чисел: ${MyArray.getNegativeNum(arr)} <br>`)
+document.write(`Кількість разів, коли зустрічається число ${num}: ${MyArray.getNumOfRepetitions(arr, num)} <br>`)
