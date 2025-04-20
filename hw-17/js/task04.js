@@ -30,7 +30,12 @@ class Warehouse {
    }
 
    registerProduct(product){
-      this.products.push(product)
+      const productRegister = this.products.find(p => p.name === product.name)
+      if (productRegister) {
+         productRegister.quantity += product.quantity
+      } else {
+         this.products.push(product)
+      }
    }
 
    shipProduct(productName, amount){
@@ -66,7 +71,7 @@ const firm2 = new Firm("AAA", "1255")
 const product1 = new Product("Вода", "літрів", 100, firm1.name, firm1.registrationNumber)
 const product2 = new Product("Сік", "літрів", 50, firm2.name, firm2.registrationNumber)
 
-const warehouse = new Warehouse()
+const warehouse = new Warehouse() 
 warehouse.registerProduct(product1)
 warehouse.registerProduct(product2)
 
@@ -74,3 +79,9 @@ warehouse.listProducts()
 
 warehouse.shipProduct("Вода", 30)
 warehouse.shipProduct("Сік", 60)
+
+warehouse.listProducts()
+
+const product3 = new Product("Вода", "літрів", 50, firm1.name, firm1.registrationNumber)
+warehouse.registerProduct(product3)
+warehouse.listProducts()
