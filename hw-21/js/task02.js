@@ -1,34 +1,63 @@
 "use strict"
-// Дано 5 елементів input. При введенні значення у якийсь із них необхідно автоматично заповнювати інші (усі попередні у спадному порядку(кожен попередній має значення на 1 менше за наступний), усі наступні на 1 більше (кожен наступне на 1 більше за попереднього)
-const container = document.getElementById("container")
+// Створити клас Client. На основі цього класу створити клас GoldenClient
 
-container.addEventListener('input', function(event) {
-   const input = event.target
-
-   let currentValue = parseInt(input.value)
-   if (isNaN(currentValue)) return
-
-   let value = currentValue
-
-   let prev = input.parentElement.previousElementSibling
-   while (prev) {
-      const prevInput = prev.querySelector('input')
-      if (prevInput) {
-         value -= 1
-         prevInput.value = value
-      }
-      prev = prev.previousElementSibling
+class Client {
+   constructor(id, fullName, sumMoney) {
+      this.id = id
+      this.fullName = fullName
+      this.sumMoney =sumMoney
    }
 
-   value = currentValue
-
-   let next = input.parentElement.nextElementSibling
-   while (next) {
-      const nextInput = next.querySelector('input')
-      if (nextInput) {
-         value += 1
-         nextInput.value = value
-      }
-      next = next.nextElementSibling
+   addMoney (numMoney){
+      if(numMoney>0) return this.sumMoney +=numMoney
    }
-})
+   withdrawal (numMoney) {
+      if (numMoney <= this.sumMoney) return this.sumMoney-=numMoney
+      else throw new Error("На рахунку недостатньо коштів");
+   }
+
+   toString (){
+      return `id: ${this.id}, ПІБ: ${this.fullName}, кількість грошей на рахунку: ${this.sumMoney}`
+   }
+}
+
+class GoldenClient extends Client {
+   constructor(id, fullName, sumMoney, limit, percentage) {
+      super(id, fullName, sumMoney)
+      this.limit = limit
+      this.percentage = percentage
+      this.creditMoney = 0
+   }
+
+   addMoney (numMoney){
+      if(numMoney>0) return this.sumMoney +=numMoney
+   }
+
+   withdrawal (numMoney) {
+      if(numMoney > (this.sumMoney+this.limit)) throw new Error("На рахунку недостатньо коштів")
+      else{
+         if (numMoney <= this.sumMoney) {
+            this.sumMoney -= numMoney
+         } else {
+            this.creditMoney = numMoney - this.sumMoney
+            this.sumMoney = 0
+         }
+      }
+      return this.sumMoney
+   }
+
+   getPenalty (){
+      return this.creditMoney * (this.percentage/100)
+   }
+
+   toString() {
+      return `${super.toString()}, Ліміт кредиту: ${this.limit}, Відсоток кредиту: ${this.percentage}%`;
+   }
+}
+
+const client1 = new Client(1, "Ivanov Ivan Ivanovich", 40000)
+const container = document.querySelector(".container")
+container.innerText = client1
+
+
+

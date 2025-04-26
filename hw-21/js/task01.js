@@ -36,4 +36,4 @@ class Worker extends Person {
 
 const person1 = new Worker ("Ivan", 27, "Ukraine", "Developer", 30000, 23)
 const container = document.querySelector(".container")
-container.append(person1)
+container.innerText = person1
