@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: none;
+
+	box-sizing: border-box;
+}
+
+*::before,
+*::after {
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	color: inherit;
+	cursor: pointer;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+html,
+body {
+	line-height: 1;
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	background-color: transparent;
+}
+
+input,
+textarea {
+	width: 100%;
+}
+
+button,
+select,
+option {
+	cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	appearance: none;
+}
+
+.card {
+   font-family: "Poppins", sans-serif;
+}
+.card__list {
+   display: flex;
+}
+.card__item {
+   background-color: #fff;
+   width: 25%;
+   border: 1px solid #c7c7c7bc;
+   padding: 20px;
+}
+.card__item a{
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 10px;
+}
+.card__img {
+   aspect-ratio: 1 / 1;
+   overflow: hidden;
+}
+.card__img img{
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+}
+.card__item h2{
+   flex-grow: 1;
+}
+.card__item h3{
+   color: rgb(231, 81, 81);
+   font-size: 24px;
+}
+
+.card__span{
+   padding: 10px;
+   border-radius: 16px;
+   color: #fff;
+   background-color: rgb(251, 187, 68);
+   text-transform: uppercase;
+}
+.card__span--background {
+   background-color: rgb(231, 81, 81);;
+}
+
+.selected {
+   border: 2px solid rgb(47, 135, 47);
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+      #table-container {
+         display: flex;
+         flex-direction: column;
+         gap: 25px;
+      }
+      .selected-table {
+         border: 3px solid red;
+      }
+   </style>
+</head>
+<body>
+   <h1>Задача 4</h1>
+   <p>
+      Дано 3 таблиці розмірності 3*3 з випадковими числами. Якщо відбувається клік на якійсь із клітинок, то до відповідної таблиці додається червона рамка (спробуйте додати можливість відображення кількості кліків біля назви таблиці з використанням відповідно доданого для цього атрибута).   </p>
+   <div id="table-container">
+      <div class="table-01">
+         <h1>Таблиця №1 (кількість кліків: <span class="click-num"></span>)</h1>
+      </div>
+      <div class="table-02">
+         <h1>Таблиця №2 (кількість кліків: <span class="click-num"></span>)</h1>
+      </div>
+      <div class="table-03">
+         <h1>Таблиця №3 (кількість кліків: <span class="click-num"></span>)</h1>
+      </div>
+   </div>
+   <script src="../js/task04.js"></script>
+</body>
+</html>
