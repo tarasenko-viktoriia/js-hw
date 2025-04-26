@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ДЗ №21</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+      h1 {
+         text-align: center;
+         color: rgba(63, 63, 63, 0.834);
+         font-size: 3.125rem;
+      }
+      a {
+         text-decoration: none;
+         display: inline-block;
+         color: inherit;
+      }
+      h3 > span {
+         text-transform: uppercase;
+         color: rgba(255, 0, 0, 0.423);
+      }
+      li {
+         list-style: none;
+      }
+      p{
+         color: rgba(63, 63, 63, 0.747);
+      }
+      .grid-block {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: .9375rem;
+         padding: 0;
+      }
+      .grid-block__item {
+         border: 1px solid rgba(63, 63, 63, 0.834);
+         padding: .9375rem;
+         background-color: rgba(240, 248, 255, 0.447);
+         cursor: pointer;
+      }
+   </style>
+</head>
+<body>
+   <h1>ДЗ №21</h1>
+   <ol class="grid-block">
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task01.html">
+            <h3> Задача 1</h3>
+            <p>
+               Розробити клас Person (поля:ім'я, вік, адреса; методи: toString, визначення року народження). На основі класу Person  розробити клас Worker (додати поля: посада, розмір заробітної плати, кількість відсотів оподаткування; методи:визначення кількості виплачених коштів за рік, та визначення розміру податків) 
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task2.html">
+            <h3>Задача 2</h3>
+            <p>
+               Створити клас Client. На основі цього класу створити клас GoldenClient
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task3.html">
+            <h3>
+               Задача 3
+            </h3>
+            <p>
+               Створити клас Bank, у якому зберігається масив клієнтів. Виконати такі операції <br>
+               Вивести всіх простих клієнтів;<br>
+               Вивести всіх клієнтів GoldenClient;<br>
+               Знайти сумарну кількість грошей на рахунку;<br>
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task4.html">
+            <h3>
+               Задача 4 
+            </h3>
+            <p>
+               Розробити Класи House, Dog, Bird. Подумайте яким має бути спільний клас предок.
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task5.html">
+            <h3>
+               Задача 5 <span>ДЛЯ ПЕРЕВІРКИ</span>
+            </h3>
+            <p>
+               Користувач задає місяць навчання учня (перевіряти чи є числом, чи від 1 до 12, чи не канікули) та оцінку (перевіряти чи є числом, чи від 1 до 100). Вивести чи зможе він виправити оцінку (якщо оцінка погана і це не останній місяць у семестрі) . Обробку усіх помилок зробити з використанням відповідних класів.
+            </p>
+         </a>
+      </li>
+   </ol>
+</body>
+</html>
