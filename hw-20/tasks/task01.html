@@ -7,25 +7,29 @@
     <style>
         body {
           background-color: rgba(135, 171, 222, 0.526);
+          overflow: hidden;
+        }
+        #container {
+          position: relative;
+          width: 100%;
+          height: 100vh; 
+        }
+        .star{
+          background-color: white;
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          box-shadow: 0 0 10px white;
         }
     </style>
 </head>
 <body>
   <h1>Задача 1</h1>
   <p>
-    Дано 10 рядків тексту «Hello!» у окремих div. При кліку на якийсь із них усі наступні повинні бути зафарбовані у червоний колір.
-  </p>
+    Сяючі зорі. Вказана кількість зірочок повинна з’являтися у випадковій частині екрану. Кожна зірка (це екземпляр класу Star) з певним кроком і інтервалом збільшується від мінімального до максимального розміру. Як тільки досягнути максимального розміру зірочка повинна з’являтися у іншій випадковій позиції.  </p>
   <div id="container">
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
-    <div>Hello!</div>
+
   </div>
   <script src="../js/task01.js"></script>
 </body>
