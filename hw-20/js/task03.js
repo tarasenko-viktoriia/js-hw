@@ -1,32 +1,53 @@
 "use strict"
-// Дано 5 випадковим чином згенерованих нумерованих списків з рандомними числами (кількість елементів у списку випадкова від 1 до 10, елементи випадкові – від 1 до 100). При натисненні на кнопку нумеровані списки з парною кількістю елементів зафарбувати у зелений колір, інші у червоний.
+// На формі вводять 7 числових значень (вік, зріст, вага, заробітна плата, стаж, номер відділу, порядковий номер). Додати подію обробки події click на форму і якщо клік на внутрішньому input, то автоматично замінювати значення його на 0. Використати делегування
 
-function createList(num) {
-   const listContainer = document.querySelector(".list-container")
-   for (let i = 1; i <= num; i++) {
-      const olElement = document.createElement("ol")
-      let numOlElements = 1 + Math.floor(Math.random() * 10)
-      for (let j = 1; j <= numOlElements; j++) {
-         const liElement = document.createElement("li")
-         let randNum = 1 + Math.floor(Math.random() * 100)
-         liElement.innerText = randNum
-         olElement.append(liElement)
+const inputItem = ["Вік", "Зріст", "Вага", "Заробітна плата", "Стаж", "Номер відділу", "Порядковий номер"]
+const cssObj = {
+   inputStyle: "input-item",
+}
+
+class Form {
+   constructor(inputItem, cssObj) {
+      this.inputItem = inputItem
+      this.cssObj = cssObj
+   }
+
+   render(formContainer) {
+      this.form = document.createElement("form")
+      this.form.className = "form"
+
+      for (let i = 0; i < this.inputItem.length; i++) {
+         const divInput = document.createElement("div")
+         divInput.className = this.cssObj.inputStyle
+
+         const label = document.createElement("label")
+         label.innerText = this.inputItem[i]
+         divInput.append(label)
+
+         const input = document.createElement("input")
+         input.type = "number"
+         divInput.append(input)
+
+         this.form.append(divInput)
       }
-      listContainer.append(olElement)
+
+      this.form.addEventListener("click", (event) => {
+         this.inputClick(event)
+      })
+
+      if (formContainer) {
+         formContainer.append(this.form)
+      }
+   }
+
+   inputClick(event) {
+      const targetEl = event.target
+      if (targetEl.tagName === "INPUT") {
+         targetEl.value = 0
+      }
    }
 }
 
-
-function colorList() {
-   const olList = document.querySelectorAll('OL')
-   olList.forEach(list => {
-      if(list.children.length % 2 === 0) list.style.color = "green"
-      else list.style.color = "red"
-   })
-}
-
-createList(5)
-
-document.querySelector('button').addEventListener("click", colorList)
-
-
+const form = new Form(inputItem, cssObj)
+const formContainer = document.querySelector(".form-container")
+form.render(formContainer)
