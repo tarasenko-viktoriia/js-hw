@@ -1,48 +1,69 @@
 "use strict"
+// На сторінці міститься певна кількість кнопок і інпутів. Підраховувати загальну кількість кліків окремо на кнопках і окремо на інпутах.
 
-function createTable(rowNum, colsNum, minRandNum = 0, maxRandNum = 100) {
-   const tableEl = document.createElement('table')
-   tableEl.style.cssText = "border-collapse: collapse; width: 100%;"
-   for (let rowIndex = 0; rowIndex < rowNum; rowIndex++) {
-      const trEl = document.createElement("tr")
+class Button{
+   constructor(container, resultSelector){
+      this.container = container
+      this.resultSelector = document.querySelector(resultSelector)
+      this.count = 0
+   }
 
-      for (let colIndex = 0; colIndex < colsNum; colIndex++) {
-         const tdEl = document.createElement("td")
-
-         tdEl.innerText = minRandNum + Math.floor(Math.random() * (maxRandNum - minRandNum + 1))
-         tdEl.style.cssText = "border: 1px solid black; padding: 8px; text-align: center;";
-         trEl.append(tdEl)
+   init(){
+      this.container.addEventListener("click", (e)=> this.counterButton(e))
+   }
+   counterButton(event){
+      const targetEl = event.target
+      if (targetEl.tagName === "BUTTON") {
+         this.count++
+         this.resultSelector.innerText = this.count
       }
-      tableEl.append(trEl)
+      
    }
-   return tableEl
+   render(){
+      const buttonCreate = document.createElement("button")
+      buttonCreate.innerText = "Button"
+      this.container.append(buttonCreate)
+   }
 }
-
-const table1 = createTable(3, 3)
-const table2 = createTable(3, 3)
-const table3 = createTable(3, 3)
-document.querySelector(".table-01").append(table1)
-document.querySelector(".table-02").append(table2)
-document.querySelector(".table-03").append(table3)
-
-const tableContainer = document.querySelector("#table-container")
-tableContainer.addEventListener('click', function(event){
-   const clickedCell = event.target.closest('td')
-   
-   if (clickedCell) {
-      const table = clickedCell.closest('table')  
-      
-      let clicks = table.getAttribute("data-clicks")
-
-      clicks++
-      
-      table.setAttribute("data-clicks", clicks)
-      
-      const tableWrapper = table.parentElement 
-      const clickCounter = tableWrapper.querySelector(".click-num") 
-      
-      clickCounter.innerText = clicks
-
-      table.classList.toggle('selected-table')
+class Input{
+   constructor(container, resultSelector){
+      this.container = container
+      this.resultSelector = document.querySelector(resultSelector)
+      this.count = 0
    }
-})
+   init(){
+      this.container.addEventListener("click", (e)=> this.counterInput(e))
+   }
+   counterInput(event){
+      const targetEl = event.target
+      if (targetEl.tagName === "INPUT") {
+         this.count++
+         this.resultSelector.innerText = this.count
+      }
+   }
+   render(){
+      const div = document.createElement("div")
+
+      const labelCreate = document.createElement("label")
+      labelCreate.innerText = "Value"
+      div.append(labelCreate)
+
+      const inputCreate = document.createElement("input")
+      div.append(inputCreate)
+
+      this.container.append(div)
+   }
+}
+const inputContainer = document.querySelector('.input-container')
+const buttonContainer = document.querySelector('.button-container')
+
+const buttonTracker = new Button(buttonContainer, '.result-button')
+const inputTracker = new Input(inputContainer, '.result-input')
+
+buttonTracker.init()
+inputTracker.init()
+
+for (let i = 0; i < 10; i++) {
+   inputTracker.render(inputContainer)
+   buttonTracker.render(buttonContainer)
+}
