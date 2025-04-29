@@ -8,29 +8,34 @@
       body {
          background-color: rgba(135, 171, 222, 0.526);
       }
-      #table-container {
+      .block {
+         display: flex;
+         max-width: 500px;
+         justify-content: space-between;
+      }
+      .button-container {
          display: flex;
          flex-direction: column;
-         gap: 25px;
+         gap: 15px;
       }
-      .selected-table {
-         border: 3px solid red;
+      .input-container {
+         display: flex;
+         flex-direction: column;
+         gap: 15px;
       }
    </style>
 </head>
 <body>
    <h1>Задача 4</h1>
    <p>
-      Дано 3 таблиці розмірності 3*3 з випадковими числами. Якщо відбувається клік на якійсь із клітинок, то до відповідної таблиці додається червона рамка (спробуйте додати можливість відображення кількості кліків біля назви таблиці з використанням відповідно доданого для цього атрибута).   </p>
-   <div id="table-container">
-      <div class="table-01">
-         <h1>Таблиця №1 (кількість кліків: <span class="click-num"></span>)</h1>
-      </div>
-      <div class="table-02">
-         <h1>Таблиця №2 (кількість кліків: <span class="click-num"></span>)</h1>
-      </div>
-      <div class="table-03">
-         <h1>Таблиця №3 (кількість кліків: <span class="click-num"></span>)</h1>
+      На сторінці міститься певна кількість кнопок і інпутів. Підраховувати загальну кількість кліків окремо на кнопках і окремо на інпутах.
+   </p>
+   <div class="container">
+      <h2>Кількість кліків на інпути: <span class="result-input"></span></h2>
+      <h2>Кількість кліків на кнопки: <span class="result-button"></span></h2>
+      <div class="block">
+         <div class="input-container"></div>
+         <div class="button-container"></div>
       </div>
    </div>
    <script src="../js/task04.js"></script>
