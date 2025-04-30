@@ -29,10 +29,6 @@ class GoldenClient extends Client {
       this.creditMoney = 0
    }
 
-   addMoney (numMoney){
-      if(numMoney>0) return this.sumMoney +=numMoney
-   }
-
    withdrawal (numMoney) {
       if(numMoney > (this.sumMoney+this.limit)) throw new Error("На рахунку недостатньо коштів")
       else{
