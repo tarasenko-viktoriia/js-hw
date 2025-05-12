@@ -37,4 +37,4 @@ function colorChange() {
 initBgColor()
 let countChange = changeCounter()
 
-inputColor.addEventListener('input', colorChange)
+inputColor.addEventListener('change', colorChange)
