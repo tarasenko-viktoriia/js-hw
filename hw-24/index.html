@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ДЗ №24</title>
+   <style>
+      body {
+         background-color: rgba(135, 171, 222, 0.526);
+      }
+      h1 {
+         text-align: center;
+         color: rgba(63, 63, 63, 0.834);
+         font-size: 3.125rem;
+      }
+      a {
+         text-decoration: none;
+         display: inline-block;
+         color: inherit;
+      }
+      h3 > span {
+         text-transform: uppercase;
+         color: rgba(255, 0, 0, 0.423);
+      }
+      li {
+         list-style: none;
+      }
+      p{
+         color: rgba(63, 63, 63, 0.747);
+      }
+      .grid-block {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: .9375rem;
+         padding: 0;
+      }
+      .grid-block__item {
+         border: 1px solid rgba(63, 63, 63, 0.834);
+         padding: .9375rem;
+         background-color: rgba(240, 248, 255, 0.447);
+         cursor: pointer;
+      }
+   </style>
+</head>
+<body>
+   <h1>ДЗ №24</h1>
+   <ol class="grid-block">
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task01.html">
+            <h3> Задача 1</h3>
+            <p>
+               Дано клас PhoneNumber. Створити функцію перетворення до string, при якому на основі номера виводиться оператор (050….  à MTC, 096… à Kyivstar, ….)
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task2.html">
+            <h3>Задача 2</h3>
+            <p>
+               Дано Shop  -- клас, що містить список товарів (масив об’єктів класу Product (назва, ціна, кількість одиниць). Додати можливість ітератора до класу Shop, щоб при ітеруванні для кожного елемента виводився рядок «товар-загальна вартість»
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task3.html">
+            <h3>
+               Задача 3
+            </h3>
+            <p>
+               Створити генератор, який би випадковим чином поступово генерував вказану кількість парних чисел.
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task4.html">
+            <h3>
+               Задача 4 
+            </h3>
+            <p>
+               Дано список URL адрес. Підрахувати кількість адрес, що відносяться до кожного із доменів (edu, com, org,...).
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task5.html">
+            <h3>
+               Задача 5
+            </h3>
+            <p>
+               Дано масив книг (назва, рік видання, автор, ціна). Підрахувати загальну вартість книг для кожного із авторів.
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task6.html">
+            <h3>
+               Задача 6
+            </h3>
+            <p>
+               Дано інформацію про відвідувачів деякого сайту (для кожного відвідувача зберігається логін). Підрахувати для кожного клієнта кількість відвідувань.
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task7.html">
+            <h3>
+               Задача 7
+            </h3>
+            <p>
+               Дано масив студентів (піб, курс, факультет). Підрахувати кількість різних факультетів, та кількість студентів кожного з курсів. 
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task8.html">
+            <h3>
+               Задача 8
+            </h3>
+            <p>
+               Дано масив показів температур. Підрахувати кількість входжень кожного із показів
+               let temperatures = [12.4, 24.9, 10.6, 12.4, 24.9, 12.4, 10.6, 11.9]
+               Заокруглити вверх значення та підрахувати кількість різних показів.
+            </p>
+         </a>
+      </li>
+      <li class="grid-block__item">
+         <a target="_blank" href="tasks/task9.html">
+            <h3>
+               Задача 9
+            </h3>
+            <p>
+               Дано два списки прізвищ студентів, що відвідують гуртки з математики і історії. Підрахувати скільки студентів з гуртка з історії також відвідують гурток з математики. Також підрахувати скільки всього студентів відвідують хоча б один гурток.
+            </p>
+         </a>
+      </li>
+   </ol>
+</body>
+</html>
